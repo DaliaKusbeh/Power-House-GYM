@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="748.0" styleClass="backGround" stylesheets="@../CSS/fullPackUpStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClassOfScheduleController">
+   <children>
+      <TextField fx:id="firstNameTextField" layoutX="29.0" layoutY="33.0" promptText="First Name . . . . " />
+      <TextField fx:id="lastNameTextField" layoutX="189.0" layoutY="33.0" promptText="Last Name . . . ." />
+      <Button fx:id="searchButton" layoutX="358.0" layoutY="33.0" mnemonicParsing="false" onAction="#handelSearch" prefHeight="25.0" prefWidth="92.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Search" />
+      <ComboBox fx:id="sortComBox" layoutX="29.0" layoutY="95.0" prefWidth="150.0" promptText="Select Item To Sort" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+      <Button fx:id="sortByButton" layoutX="205.0" layoutY="95.0" mnemonicParsing="false" onAction="#handelSort" prefHeight="25.0" prefWidth="91.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Sort" />
+      <TableView fx:id="ATableView" layoutX="30.0" layoutY="162.0" prefHeight="220.0" prefWidth="694.0">
+        <columns>
+          <TableColumn fx:id="Fname" prefWidth="89.0" text="Fname" />
+          <TableColumn fx:id="Lname" prefWidth="82.0" text="Lname" />
+            <TableColumn fx:id="scheduleName" prefWidth="142.0" text="scheduleName" />
+            <TableColumn fx:id="days" minWidth="0.0" prefWidth="108.0" text="Day" />
+            <TableColumn fx:id="stime" prefWidth="85.0" text="Start ime" />
+            <TableColumn fx:id="etime" prefWidth="85.0" text="End Time" />
+            <TableColumn fx:id="NoOfTrainee" prefWidth="97.0" text="NoOfTrainee" />
+        </columns>
+      </TableView>
+      <Label fx:id="WrongSearchLabel" layoutX="29.0" layoutY="65.0" text="Enter First Or Last Name" textFill="#fc2424" visible="false">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Label>
+      <Label fx:id="WrongSrotLabel" layoutX="29.0" layoutY="129.0" text="Please Chose Item to sort" textFill="#e81717" visible="false">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Label>
+      <Button fx:id="totalNumberOfCoach" layoutX="30.0" layoutY="413.0" mnemonicParsing="false" onAction="#getTotalNumberCoach" prefHeight="25.0" prefWidth="118.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text=" Coach " />
+      <Button fx:id="totalNumberOfScheduale" layoutX="274.0" layoutY="413.0" mnemonicParsing="false" onAction="#getTotalNumberSchedule" prefHeight="25.0" prefWidth="118.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text=" Scheduale" />
+      <Button fx:id="totalNumberOfTrainee" layoutX="528.0" layoutY="413.0" mnemonicParsing="false" onAction="#getTotalNumberTrainee" prefHeight="25.0" prefWidth="118.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Trainee" />
+      <TextField fx:id="totalNumberOfCoachText" layoutX="166.0" layoutY="413.0" prefHeight="25.0" prefWidth="52.0" promptText="#Of Coach" />
+      <TextField fx:id="totalNumberOfSchedualeText" layoutX="418.0" layoutY="413.0" prefHeight="25.0" prefWidth="52.0" promptText="# of Sch" />
+      <TextField fx:id="totalNumberOfTraineeText" layoutX="667.0" layoutY="413.0" prefHeight="25.0" prefWidth="52.0" promptText="# of Trainee" />
+      <Label layoutX="58.0" layoutY="386.0" text="Total Number Of:">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="29.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_sigma_48px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="358.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_search_48px_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="205.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_up_down_arrow_48px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="29.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_coach_48px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="274.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_task_48px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="528.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_replace_player_48px.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

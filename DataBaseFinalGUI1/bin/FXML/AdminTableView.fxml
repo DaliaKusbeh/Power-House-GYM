@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdministratorController">
+	<content>
+		<Pane prefHeight="642.0" prefWidth="1106.0">
+			<children>
+				<TableView fx:id="ATableView" layoutX="143.0" layoutY="179.0" prefHeight="284.0" prefWidth="535.0">
+					<columns>
+						<TableColumn fx:id="FNameCol" prefWidth="117.5999755859375" text="FName" />
+						<TableColumn fx:id="LNameCol" prefWidth="149.60003662109375" text="LastName" />
+						<TableColumn fx:id="GenderCol" minWidth="0.0" prefWidth="101.5999755859375" text="Gender" />
+						<TableColumn fx:id="PhoneCol" prefWidth="160.0" text="Phone" />
+					</columns>
+				</TableView>
+				<VBox layoutX="114.0" layoutY="14.0" prefHeight="150.0" prefWidth="543.0">
+					<children>
+						<HBox prefHeight="34.0" prefWidth="543.0" spacing="10.0">
+							<children>
+								<TextField fx:id="firstNameTextField" prefHeight="32.0" prefWidth="155.0" promptText="Enter First Name" />
+								<TextField fx:id="lastNameTextField" prefHeight="41.0" prefWidth="155.0" promptText="Enter Last Name" />
+								<Button fx:id="searchButton" mnemonicParsing="false" onAction="#handelSearch" prefHeight="34.0" prefWidth="146.0" text="Search" />
+							</children>
+						</HBox>
+						<HBox prefHeight="26.0" prefWidth="543.0">
+							<children>
+								<Label fx:id="WrongSearchLabel" prefHeight="18.0" prefWidth="190.0" text="Enter First Or Last Name" textFill="RED" visible="false" />
+							</children>
+							<VBox.margin>
+								<Insets top="5.0" />
+							</VBox.margin>
+						</HBox>
+						<HBox prefHeight="43.0" prefWidth="402.0" spacing="10.0">
+							<children>
+								<Label />
+								<Button fx:id="sortByButton" mnemonicParsing="false" onAction="#handelSort" prefHeight="26.0" prefWidth="130.0" text="Sort By" />
+								<ComboBox fx:id="sortComBox" prefHeight="26.0" prefWidth="207.0" />
+							</children>
+						</HBox>
+						<HBox prefHeight="32.0" prefWidth="543.0">
+							<children>
+								<Label />
+								<Label fx:id="WrongSrotLabel" text="Please Chose Item to sort" textFill="RED" visible="false" />
+							</children>
+						</HBox>
+					</children>
+				</VBox>
+			</children>
+		</Pane>
+	</content>
+</ScrollPane>

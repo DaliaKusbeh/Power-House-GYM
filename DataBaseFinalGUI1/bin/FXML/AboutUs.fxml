@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.firstSceneController">
+	<children>
+		<BorderPane prefHeight="614.0" prefWidth="882.0">
+			<left>
+				<Pane prefHeight="614.0" prefWidth="276.0" styleClass="container1" stylesheets="@../CSS/fullPackUpStyle.css" BorderPane.alignment="CENTER">
+					<children>
+						<ImageView fitHeight="64.0" fitWidth="56.0" layoutX="103.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/icons8_help_60px.png" />
+							</image>
+						</ImageView>
+                  <Text layoutX="63.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About As">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+					</children>
+				</Pane>
+			</left>
+			<center>
+				<Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+					<children>
+						<Button contentDisplay="TOP" layoutX="30.0" layoutY="316.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="260.0" style="-fx-background-radius: 20;" styleClass="backGround" stylesheets="@../CSS/fullPackUpStyle.css" />
+						<Button layoutX="315.0" layoutY="314.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="260.0" style="-fx-background-radius: 20;" styleClass="backGround" stylesheets="@../CSS/fullPackUpStyle.css" />
+						<Text layoutX="78.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ramallah - Rukab ST.">
+							<font>
+								<Font name="System Bold" size="18.0" />
+							</font>
+						</Text>
+						<Text layoutX="379.0" layoutY="438.0" stroke="#1b1b1b" strokeType="OUTSIDE" strokeWidth="0.0" text="02-298-4070">
+							<font>
+								<Font name="System Bold" size="20.0" />
+							</font>
+						</Text>
+						<Pane layoutY="494.0" prefHeight="117.0" prefWidth="644.0">
+							<children>
+								<ImageView fitHeight="46.0" fitWidth="39.0" layoutX="16.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../icon/icons8_Facebook_60px.png" />
+									</image>
+								</ImageView>
+								<ImageView fitHeight="36.0" fitWidth="39.0" layoutX="18.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../icon/icons8_Instagram_100px.png" />
+									</image>
+								</ImageView>
+								<Text layoutX="74.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power House Gym" wrappingWidth="262.12774658203125">
+									<font>
+										<Font name="Bank Gothic Medium BT" size="22.0" />
+									</font>
+								</Text>
+								<Text layoutX="66.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PowerHouseGym-Ramallah" wrappingWidth="339.0740966796875">
+									<font>
+										<Font name="Bank Gothic Medium BT" size="21.0" />
+									</font>
+								</Text>
+							</children>
+						</Pane>
+						<Button fx:id="backButton" contentDisplay="TOP" layoutX="505.0" layoutY="14.0" mnemonicParsing="false" onAction="#setBackToMainView" prefHeight="53.0" prefWidth="82.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Back" textFill="#e44646">
+							<font>
+								<Font name="System Bold" size="20.0" />
+							</font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8_previous_52px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+						</Button>
+                  <Button contentDisplay="TOP" layoutX="154.0" layoutY="115.0" mnemonicParsing="false" prefHeight="144.0" prefWidth="318.0" style="-fx-background-radius: 25;" styleClass="container1" stylesheets="@../CSS/fullPackUpStyle.css" text="Bulid Your Boudy .. Build Your Character">
+                     <graphic>
+      						<ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+      							<image>
+      								<Image url="@../icon/icons8_dumbbell_50px.png" />
+      							</image>
+      						</ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+						<ImageView fitHeight="77.0" fitWidth="61.0" layoutX="408.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/icons8_phone_50px.png" />
+							</image>
+						</ImageView>
+						<ImageView fitHeight="70.0" fitWidth="73.0" layoutX="119.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/icons8_Location_50px_1.png" />
+							</image>
+						</ImageView>
+					</children>
+				</Pane>
+			</center>
+		</BorderPane>
+	</children>
+</AnchorPane>

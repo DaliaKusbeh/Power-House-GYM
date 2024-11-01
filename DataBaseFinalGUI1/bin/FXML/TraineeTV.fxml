@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="836.0" styleClass="backGround" stylesheets="@../CSS/fullPackUpStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TraineeTVController">
+	<children>
+		<VBox layoutX="131.0" layoutY="39.0" prefHeight="128.0" prefWidth="574.0" spacing="10.0">
+			<children>
+				<HBox prefHeight="27.0" prefWidth="574.0" spacing="20.0">
+					<children>
+						<Label prefHeight="18.0" prefWidth="47.0" text="Serach" />
+						<TextField fx:id="firstNameTextField" promptText="First Name" />
+						<TextField fx:id="lastnameTextField" promptText="Last Name" />
+						<Button fx:id="searchButton" mnemonicParsing="false" onAction="#handelSearch" prefHeight="26.0" prefWidth="137.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Search" />
+					</children>
+				</HBox>
+				<HBox prefHeight="37.0" prefWidth="574.0">
+					<children>
+						<Label fx:id="Wsearch" text="please enter either First OR last Name to Search" textFill="RED" visible="false" />
+					</children>
+				</HBox>
+				<HBox prefHeight="37.0" prefWidth="574.0" spacing="20.0">
+					<children>
+						<Label prefHeight="18.0" prefWidth="83.0" text="Sort By" />
+						<ComboBox fx:id="SortComBox" prefHeight="26.0" prefWidth="187.0" promptText="Select The Colunm to Sort" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+						<Button fx:id="sortButton" mnemonicParsing="false" onAction="#handelSort" prefHeight="26.0" prefWidth="113.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Sort" />
+					</children>
+				</HBox>
+				<HBox prefHeight="37.0" prefWidth="574.0">
+					<children>
+						<Label fx:id="Wsort" text="Select Sort item" textFill="RED" visible="false" />
+					</children>
+				</HBox>
+				<HBox prefHeight="37.0" prefWidth="574.0" />
+			</children>
+		</VBox>
+		<TableView fx:id="TtableView" layoutX="20.0" layoutY="167.0" onMouseClicked="#updateView" prefHeight="269.0" prefWidth="795.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css">
+			<columns>
+				<TableColumn fx:id="TraineeIdCol" prefWidth="79.99999713897705" text="TraineeId" />
+				<TableColumn fx:id="firstNameCol" prefWidth="95.19998168945312" text="First Name" />
+				<TableColumn fx:id="lastNameCol" prefWidth="99.20002746582031" text="Last Name" />
+				<TableColumn fx:id="CoachNameCol" prefWidth="87.199951171875" text="Coach Name" />
+				<TableColumn fx:id="GenderCol" prefWidth="52.800048828125" text="Gender" />
+				<TableColumn fx:id="emailCol" prefWidth="148.00003051757812" text="Email" />
+				<TableColumn fx:id="PhoneNumberCol" prefWidth="103.199951171875" text="Phone Number" />
+				<TableColumn fx:id="membershipTypeCol" prefWidth="120.0" text="membershipType" />
+			</columns>
+		</TableView>
+		<VBox layoutX="171.0" layoutY="455.0" prefHeight="157.0" prefWidth="651.0">
+			<children>
+				<HBox prefHeight="37.0" prefWidth="558.0" spacing="10.0">
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</padding>
+					<VBox.margin>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</VBox.margin>
+					<children>
+						<Label prefHeight="18.0" prefWidth="80.0" text="First Name" />
+						<TextField fx:id="firstNameText" alignment="CENTER" prefHeight="26.0" prefWidth="82.0" promptText="First Name" />
+						<Label prefHeight="18.0" prefWidth="72.0" text="Last Name" />
+						<TextField fx:id="lastNameText" alignment="CENTER" prefHeight="26.0" prefWidth="86.0" promptText="Last Name" />
+						<Label text="Phone Number" />
+						<TextField fx:id="phoneNumberTextField" alignment="CENTER" prefHeight="23.0" prefWidth="142.0" promptText="phone Number">
+							<padding>
+								<Insets top="5.0" />
+							</padding>
+						</TextField>
+					</children>
+				</HBox>
+				<HBox prefHeight="37.0" prefWidth="558.0" spacing="30.0">
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</padding>
+					<children>
+						<Label text="Gender" />
+						<RadioButton fx:id="maleRB" mnemonicParsing="false" text="Male">
+							<toggleGroup>
+								<ToggleGroup fx:id="genderTolgelGroup" />
+							</toggleGroup>
+						</RadioButton>
+						<RadioButton fx:id="FEMAILERB" mnemonicParsing="false" prefHeight="18.0" prefWidth="127.0" text="Female" toggleGroup="$genderTolgelGroup" />
+						<Label text="Email" />
+						<TextField fx:id="emailTextField" alignment="CENTER" prefHeight="26.0" prefWidth="173.0" promptText="Email" />
+					</children>
+				</HBox>
+				<HBox prefHeight="37.0" prefWidth="558.0" spacing="20.0">
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</padding>
+					<children>
+						<Label text="MembershipType" />
+						<TextField fx:id="MembershipTypeTextField" alignment="CENTER" promptText="MembershipType" />
+						<ComboBox fx:id="MembershipTypeCoBox" prefHeight="26.0" prefWidth="170.0" promptText="MembershipType" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+					</children>
+				</HBox>
+				<HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+					<children>
+						<Label prefHeight="18.0" prefWidth="96.0" text="Coach Name" />
+						<TextField fx:id="coachNameTextField" alignment="CENTER" prefHeight="26.0" prefWidth="153.0" promptText="Coach Name" />
+						<ComboBox fx:id="coachNameCol" prefHeight="26.0" prefWidth="165.0" promptText="Coach Name" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+					</children>
+					<padding>
+						<Insets top="5.0" />
+					</padding>
+				</HBox>
+			</children>
+		</VBox>
+		<VBox layoutX="37.0" layoutY="455.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+			<children>
+				<Button mnemonicParsing="false" onAction="#handelUpdate" prefHeight="26.0" prefWidth="102.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Update" />
+            <Button mnemonicParsing="false" onAction="#handelDelete1" prefHeight="26.0" prefWidth="102.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Delete" />
+				<Button mnemonicParsing="false" onAction="#handelClear" prefHeight="26.0" prefWidth="102.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Clear" />
+				<Button mnemonicParsing="false" onAction="#handelRefresh" prefHeight="26.0" prefWidth="102.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Refresh" />
+			</children>
+		</VBox>
+      <Button fx:id="contactInformation" layoutX="277.0" layoutY="621.0" mnemonicParsing="false" onAction="#handelContactInformation" prefHeight="25.0" prefWidth="170.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Contact Infronation " />
+	</children>
+</Pane>

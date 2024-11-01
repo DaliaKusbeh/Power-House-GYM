@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="748.0" styleClass="backGround" stylesheets="@../CSS/fullPackUpStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EndMembershipController">
+   <children>
+      <TableView fx:id="ATableView" layoutX="66.0" layoutY="151.0" onMouseClicked="#updateView" prefHeight="240.0" prefWidth="630.0">
+        <columns>
+          <TableColumn fx:id="traineeId" prefWidth="114.0" text="traineeId" />
+          <TableColumn fx:id="Fname" prefWidth="92.0" text="Fname" />
+            <TableColumn fx:id="Lname" prefWidth="108.0" text="Lname" />
+            <TableColumn fx:id="membershipType" prefWidth="117.0" text="Membership Type" />
+            <TableColumn fx:id="startDate" prefWidth="94.0" text="Start Date " />
+            <TableColumn fx:id="endDate" prefWidth="104.0" text="End Date" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="sortComBox" layoutX="67.0" layoutY="96.0" prefWidth="150.0" promptText="Sort By" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+      <Button fx:id="sortByButton" layoutX="254.0" layoutY="96.0" mnemonicParsing="false" onAction="#handelSort" prefHeight="26.0" prefWidth="58.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Sort" />
+      <Button fx:id="searchButton" layoutX="433.0" layoutY="31.0" mnemonicParsing="false" onAction="#handelSearch" prefHeight="26.0" prefWidth="66.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Search" />
+      <TextField fx:id="firstNameTextField" layoutX="67.0" layoutY="31.0" promptText="First Name" />
+      <TextField fx:id="lastNameTextField" layoutX="254.0" layoutY="31.0" promptText="Last Name" />
+      <Label fx:id="WrongSearchLabel" layoutX="66.0" layoutY="68.0" text="Please Enter First &amp; Last name to execute .. " textFill="#f80808" visible="false" />
+      <Label fx:id="WrongSrotLabel" layoutX="66.0" layoutY="128.0" text="Please choose option to execute .. " textFill="RED" visible="false" />
+      <TextField fx:id="traineeIdTestField" editable="false" layoutX="161.0" layoutY="474.0" promptText="Trainee Id . . ." />
+      <TextField fx:id="fnameTextField" layoutX="161.0" layoutY="510.0" promptText="Fname . . ." />
+      <TextField fx:id="membershipTypeTextField" layoutX="445.0" layoutY="474.0" promptText="Type . . ." />
+      <TextField fx:id="startDateTextField" layoutX="445.0" layoutY="510.0" promptText="Start Date . . ." />
+      <TextField fx:id="endDateTextField" layoutX="445.0" layoutY="545.0" promptText="End Date . . ." />
+      <TextField fx:id="lnameTextField" layoutX="161.0" layoutY="545.0" promptText="Lname . . . " />
+      <Button layoutX="630.0" layoutY="474.0" mnemonicParsing="false" onAction="#handleClear" prefHeight="42.0" prefWidth="77.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Clear" />
+      <Label layoutX="66.0" layoutY="478.0" text="Trainee Id :" />
+      <Label layoutX="66.0" layoutY="514.0" text="First Name :" />
+      <Label layoutX="66.0" layoutY="549.0" text="Last Name :" />
+      <Label layoutX="330.0" layoutY="478.0" text="Membership Type :" />
+      <Label layoutX="330.0" layoutY="514.0" text="Start Date ;" />
+      <Label layoutX="331.0" layoutY="549.0" text="End Date : " />
+      <Button fx:id="totalNumberOfTraineeButton" layoutX="70.0" layoutY="411.0" mnemonicParsing="false" onAction="#getTotalNumberTrainee" prefHeight="25.0" prefWidth="222.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Click to show total number of trainee " />
+      <TextField fx:id="totalNumberOfTrainee" layoutX="305.0" layoutY="411.0" prefHeight="26.0" prefWidth="62.0" />
+   </children>
+</AnchorPane>

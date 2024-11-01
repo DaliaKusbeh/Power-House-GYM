@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="751.0" styleClass="backGround" stylesheets="@../CSS/fullPackUpStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ActivityInformationController">
+   <children>
+      <TableView fx:id="ATableView" layoutX="97.0" layoutY="146.0" onMouseClicked="#updateView" prefHeight="231.0" prefWidth="522.0">
+        <columns>
+          <TableColumn fx:id="schedualeId" prefWidth="77.0" text="ScheduleId" />
+          <TableColumn fx:id="scheduleName" prefWidth="96.0" text="ScheduleName" />
+            <TableColumn fx:id="activity" prefWidth="348.0" text="Activity" />
+        </columns>
+      </TableView>
+      <TextField fx:id="firstNameTextField" layoutX="101.0" layoutY="27.0" prefHeight="26.0" prefWidth="150.0" promptText="Scheduale Name . . " />
+      <Button fx:id="searchButton" layoutX="272.0" layoutY="27.0" mnemonicParsing="false" onAction="#handelSearch" prefHeight="26.0" prefWidth="102.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Search" />
+      <ComboBox fx:id="sortComBox" layoutX="101.0" layoutY="87.0" prefWidth="150.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+      <Button fx:id="sortByButton" layoutX="268.0" layoutY="87.0" mnemonicParsing="false" onAction="#handelSort" prefHeight="25.0" prefWidth="102.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Sort" />
+      <Label fx:id="WrongSearchLabel" layoutX="101.0" layoutY="60.0" text="Enter name and activity to search  !!" textFill="#ff0909" visible="false" />
+      <Label fx:id="WrongSrotLabel" layoutX="101.0" layoutY="121.0" text="choose entity to sort !!" textFill="RED" visible="false" />
+      <Button layoutX="101.0" layoutY="523.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="25.0" prefWidth="120.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Update">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
+      <Button layoutX="497.0" layoutY="523.0" mnemonicParsing="false" onAction="#handleClear" prefHeight="25.0" prefWidth="120.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Clear">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
+      <Button fx:id="totalNumberOfSchedualeeButton" layoutX="101.0" layoutY="480.0" mnemonicParsing="false" onAction="#getTotalNumberCoach" prefHeight="25.0" prefWidth="172.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="  Total Number of Session">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
+      <TextField fx:id="totalNumberOfScheduale" layoutX="281.0" layoutY="480.0" prefHeight="26.0" prefWidth="59.0" promptText="# Sch . . " />
+      <TextField fx:id="name" layoutX="187.0" layoutY="434.0" promptText="Name . . ." />
+      <TextArea fx:id="Activity" layoutX="425.0" layoutY="394.0" prefHeight="58.0" prefWidth="195.0" promptText="Activity . . . " />
+      <Label layoutX="98.0" layoutY="438.0" text="Name :">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Label>
+      <Label layoutX="370.0" layoutY="402.0" text="Activity :">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Label>
+      <TextField fx:id="idTextField" layoutX="187.0" layoutY="398.0" promptText="Scheduale Id . . ." />
+      <Label layoutX="96.0" layoutY="402.0" text="Sheduale Id :">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Label>
+      <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="104.0" layoutY="523.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_update_64px_3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="497.0" layoutY="523.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_broom_48px_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="442.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_search_48px_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="268.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_up_down_arrow_48px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="104.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8_sigma_48px.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="495.0" layoutY="480.0" mnemonicParsing="false" onAction="#handelRefersh" prefHeight="26.0" prefWidth="120.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Refresh " />
+      <Button layoutX="102.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="25.0" prefWidth="120.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Delete">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

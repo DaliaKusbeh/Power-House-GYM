@@ -1,0 +1,159 @@
+.linear-grad {
+
+-fx-background-color: linear-gradient(to bottom left,#5f0a87,#a4508b);
+}
+.backGround {
+
+-fx-background-color: linear-gradient(from 25.0% 25.0% to 100.0% 100.0% ,#9fa4c4,#b3cdd1);
+}
+
+.container {
+	-fx-background-color: linear-gradient(from 15.0% 15.0% to 100.0% 100.0% ,#f5f7fa,#b8c6db);
+	
+	-fx-background-radius: 20.0 ;
+}
+.container1 {
+	-fx-background-color: linear-gradient(from 15.0% 15.0% to 100.0% 100.0% ,#8693ab,#bdd4e7);
+	
+	-fx-background-radius: 20.0 ;
+}
+
+
+.linear-grad1 {
+
+-fx-background-color: linear-gradient(to bottom left,#a71d31,#3f0d12);
+}
+
+.linear-grad2 {
+
+-fx-background-color: linear-gradient(to bottom left,#fbd72b,#f9484a);
+}
+
+.linear-grad3 {
+
+-fx-background-color: linear-gradient(to bottom left,#c81f70,#d19592);
+}
+
+
+.linear-grad4 {
+
+-fx-background-color: linear-gradient(to bottom left,#fc575e,#f7b42c);
+}
+.linear-grad5 {
+
+-fx-background-color: linear-gradient(to bottom left,#b91372,#6b0f1a);
+}
+
+.button1 {
+	-fx-background-color :#5F0E81;
+	-fx-text-fill:#ffffff;
+}
+.button1:hover{ 
+  -fx-text-fill:#6E1988;
+}
+.button1 :pressed {
+	  -fx-text-fill:#CEB2D7;
+	
+}
+.button1 :active {
+	  -fx-text-fill:#B184BF;
+}
+
+.button2 {
+	-fx-background-color : #863684;
+	-fx-text-fill : #ffffff;
+}
+
+.button2:hover{ 
+  -fx-text-fill:#994984;
+}
+.button2:pressed {
+	  -fx-text-fill:#BB85AD;
+	
+}
+
+.button3 {
+	-fx-background-color : #761522;
+	-fx-text-fill : #ffffff;
+}
+
+
+.button3:hover{ 
+  -fx-text-fill:#981B2D;
+}
+.button3:pressed {
+	  -fx-text-fill:#981B2D;
+	
+}
+
+.button3:focused{
+	-fx-background-color : #761522;
+	-fx-border-color :#9F1C2F;
+	-fx-border-width :0.0px , 0.0px , 0.0px , 3.0px;
+	
+}
+
+.button4 {
+	-fx-background-color : #B30004;
+	-fx-text-fill : #ffffff;
+}
+
+.button4:hover{ 
+  -fx-text-fill:#981B2D;
+}
+.button4:pressed {
+	  -fx-text-fill:#981B2D;	
+}
+.button5 {
+	-fx-background-color : #DD374B;
+	-fx-background-radius:5.0;
+	-fx-border-radius:15.0;
+	-fx-text-fill : #ffffff;
+}
+
+.button5:hover{ 
+  -fx-text-fill:#981B2D;
+}
+.button5:pressed {
+   -fx-text-fill:#981B2D;
+	
+}
+
+.button6 {
+	-fx-background-color : #F4F4F4;
+	-fx-background-radius:5.0;
+	-fx-border-radius:15.0;
+	-fx-text-fill : #F4F4F4;
+}
+
+.button6:hover{ 
+  -fx-text-fill:#F4F4F4;
+}
+.button6:pressed {
+   -fx-text-fill:#F4F4F4;
+	
+}
+
+.button6 {
+	-fx-background-color : #BFC4D9;
+	-fx-background-radius:5.0;
+	-fx-border-radius:15.0;
+	-fx-text-fill : #130000;
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);
+	
+	
+	
+	
+}
+
+.button6:hover{ 
+
+  -fx-text-fill:#A0A6C5;
+  
+  
+}
+.button6:pressed {
+   -fx-text-fill:#B30004;
+   
+	
+}

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308"
+	maxWidth="1.7976931348623157E308" prefHeight="695.0" prefWidth="960.0"
+	style="-fx-background-color: #EAEAEA;"
+	xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controllers.MainViewController">
+	<children>
+		<Pane fx:id="paneScene" layoutX="330.0" layoutY="-5.0"
+			maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+			minWidth="-Infinity" prefHeight="806.0" prefWidth="1010.0"
+			styleClass="button3" stylesheets="@../CSS/fullPackUpStyle.css" />
+		<Pane layoutX="248.0" layoutY="-5.0" prefHeight="801.0"
+			prefWidth="82.0" style="-fx-background-color: #EAEAEA;">
+			<children>
+				<Rectangle arcHeight="5.0" arcWidth="5.0" height="18.0"
+					layoutX="-34.0" layoutY="105.0" stroke="BLACK" strokeType="INSIDE"
+					width="117.0" />
+			</children>
+		</Pane>
+		<VBox layoutX="-2.0" prefHeight="801.0" prefWidth="272.0"
+			styleClass="linear-grad1" stylesheets="@../CSS/fullPackUpStyle.css">
+			<children>
+				<Button alignment="BASELINE_LEFT" graphicTextGap="8.0"
+					mnemonicParsing="false" prefHeight="100.0" prefWidth="257.0"
+					styleClass="button3" stylesheets="@../CSS/fullPackUpStyle.css"
+					text="Power House Gym" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+					<graphic>
+						<ImageView fitHeight="42.0" fitWidth="36.0"
+							pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/icons8_deadlift_50px.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+					<VBox.margin>
+						<Insets />
+					</VBox.margin>
+				</Button>
+				<Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE"
+					height="18.0" stroke="WHITE" strokeType="INSIDE" width="168.0"
+					VBox.vgrow="ALWAYS">
+					<VBox.margin>
+						<Insets left="80.0" />
+					</VBox.margin>
+				</Rectangle>
+				<Button fx:id="dashBoardButton" alignment="BASELINE_LEFT"
+					graphicTextGap="8.0" mnemonicParsing="false"
+					onAction="#dashBoardView" prefHeight="50.0" prefWidth="247.0"
+					styleClass="button3" stylesheets="@../CSS/fullPackUpStyle.css"
+					text="Home" textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="16.0" />
+					</font>
+					<graphic>
+						<ImageView fitHeight="18.0" fitWidth="18.0"
+							pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/icons8_home_100px_1.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Button>
+				<Button fx:id="staffMemberButton" alignment="BASELINE_LEFT"
+					graphicTextGap="8.0" mnemonicParsing="false"
+					onAction="#staffMemberView" prefHeight="50.0" prefWidth="241.0"
+					styleClass="button3" stylesheets="@../CSS/fullPackUpStyle.css"
+					text="Staff Member" textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="16.0" />
+					</font>
+					<graphic>
+						<ImageView fitHeight="18.0" fitWidth="18.0"
+							pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/member.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Button>
+				<Button fx:id="memberShipButton" alignment="BASELINE_LEFT"
+					graphicTextGap="8.0" mnemonicParsing="false"
+					onAction="#MemberShipTypeView" prefHeight="50.0" prefWidth="243.0"
+					styleClass="button3" stylesheets="@../CSS/fullPackUpStyle.css"
+					text="MemberShip Type" textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="16.0" />
+					</font>
+					<graphic>
+						<ImageView fitHeight="18.0" fitWidth="18.0"
+							pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/MemberShip.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Button>
+				<Button fx:id="coachesButton" alignment="BASELINE_LEFT"
+					graphicTextGap="8.0" mnemonicParsing="false"
+					onAction="#coachesView" prefHeight="50.0" prefWidth="250.0"
+					styleClass="button3" stylesheets="@../CSS/fullPackUpStyle.css"
+					text="Coaches" textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="16.0" />
+					</font>
+					<graphic>
+						<ImageView fitHeight="18.0" fitWidth="18.0"
+							pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/MemberShip.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Button>
+				<Button fx:id="traineeButton" alignment="BASELINE_LEFT"
+					graphicTextGap="8.0" mnemonicParsing="false"
+					onAction="#traineeView" prefHeight="50.0" prefWidth="267.0"
+					styleClass="button3" stylesheets="@../CSS/fullPackUpStyle.css"
+					text="Trainee" textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="16.0" />
+					</font>
+					<graphic>
+						<ImageView fitHeight="23.0" fitWidth="21.0"
+							pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/icons8_deadlift_50px.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Button>
+				<Button fx:id="classScheduleButton" alignment="BASELINE_LEFT"
+					graphicTextGap="8.0" mnemonicParsing="false"
+					onAction="#classSchedualeView" prefHeight="50.0" prefWidth="242.0"
+					stylesheets="@../CSS/fullPackUpStyle.css" text="Class Schedule"
+					textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="16.0" />
+					</font>
+					<graphic>
+						<ImageView fitHeight="18.0" fitWidth="18.0"
+							pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/schedule.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+					<styleClass>
+						<String fx:value="button3" />
+						<String fx:value="button3" />
+					</styleClass>
+				</Button>
+				<Button fx:id="groupButton" alignment="BASELINE_LEFT"
+					graphicTextGap="8.0" mnemonicParsing="false" onAction="#groupView"
+					prefHeight="50.0" prefWidth="242.0" styleClass="button3"
+					stylesheets="@../CSS/fullPackUpStyle.css" text="Group"
+					textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="16.0" />
+					</font>
+					<graphic>
+						<ImageView fitHeight="18.0" fitWidth="18.0"
+							pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/MemberShip.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Button>
+				<Button fx:id="paymentButton" alignment="BASELINE_LEFT"
+					graphicTextGap="8.0" mnemonicParsing="false"
+					onAction="#paymentView" prefHeight="50.0" prefWidth="274.0"
+					styleClass="button3" stylesheets="@../CSS/fullPackUpStyle.css"
+					text="Payment" textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="16.0" />
+					</font>
+					<graphic>
+						<ImageView fitHeight="18.0" fitWidth="18.0"
+							pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/money.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Button>
+				<Button fx:id="repotButton" alignment="BASELINE_LEFT"
+					graphicTextGap="8.0" mnemonicParsing="false" onAction="#reportView"
+					prefHeight="50.0" prefWidth="253.0" styleClass="button3"
+					stylesheets="@../CSS/fullPackUpStyle.css" text="Report"
+					textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="16.0" />
+					</font>
+					<graphic>
+						<ImageView fitHeight="22.0" fitWidth="21.0"
+							pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/quote.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Button>
+				<Button fx:id="profileButton" alignment="BASELINE_LEFT"
+					graphicTextGap="8.0" mnemonicParsing="false"
+					onAction="#profileView" prefHeight="50.0" prefWidth="271.0"
+					styleClass="button3" text="Profile" textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="16.0" />
+					</font>
+					<graphic>
+						<ImageView fitHeight="18.0" fitWidth="18.0"
+							pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/icons8_profile_50px.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Button>
+				<Button fx:id="logoutbutton" alignment="BASELINE_LEFT"
+					graphicTextGap="8.0" mnemonicParsing="false"
+					onAction="#handelLogOut" prefHeight="85.0" prefWidth="250.0"
+					styleClass="button3" stylesheets="@../CSS/fullPackUpStyle.css"
+					text="Log Out" textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="16.0" />
+					</font>
+					<graphic>
+						<ImageView fitHeight="18.0" fitWidth="18.0"
+							pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/Logout.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Button>
+			</children>
+		</VBox>
+	</children>
+</AnchorPane>

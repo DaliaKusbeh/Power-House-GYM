@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="604.0" styleClass="backGround" stylesheets="@../CSS/fullPackUpStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddCoachContoller">
+	<children>
+		<VBox layoutX="85.0" layoutY="69.0" prefHeight="483.0" prefWidth="443.0">
+			<children>
+				<HBox prefHeight="29.0" prefWidth="511.0" spacing="20.0" visible="false">
+					<children>
+						<Label fx:id="WcoachID" text="Not Valid ID" textFill="#ef0000" />
+					</children>
+					<padding>
+						<Insets left="100.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="47.0" prefWidth="511.0" spacing="20.0">
+					<children>
+						<Label alignment="TOP_CENTER" prefHeight="18.0" prefWidth="171.0" text="First Name" />
+						<TextField fx:id="FirstNameText" prefHeight="26.0" prefWidth="164.0" promptText="First Name" />
+					</children>
+				</HBox>
+				<HBox prefHeight="28.0" prefWidth="511.0" spacing="20.0">
+					<children>
+						<Label fx:id="WfirstName" text="Enter A Valid Name" textFill="#df0606" visible="false" />
+					</children>
+					<padding>
+						<Insets left="100.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="47.0" prefWidth="511.0" spacing="20.0">
+					<children>
+						<Label alignment="TOP_CENTER" prefHeight="18.0" prefWidth="171.0" text="Last Name" />
+						<TextField fx:id="LastNameText" prefHeight="26.0" prefWidth="164.0" promptText="Last Name" />
+					</children>
+				</HBox>
+				<HBox prefHeight="26.0" prefWidth="511.0" spacing="20.0">
+					<children>
+						<Label fx:id="WlastName" text="Enter A Valid Name" textFill="#f40000" visible="false" />
+					</children>
+					<padding>
+						<Insets left="100.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="47.0" prefWidth="511.0" spacing="20.0">
+					<children>
+						<Label alignment="TOP_CENTER" prefHeight="18.0" prefWidth="171.0" text="Gender" />
+						<RadioButton fx:id="maleRB" mnemonicParsing="false" text="Male">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="genderTogelGroup" />
+                     </toggleGroup></RadioButton>
+						<RadioButton fx:id="FemaleRB" mnemonicParsing="false" text="Female" toggleGroup="$genderTogelGroup" />
+					</children>
+				</HBox>
+				<HBox prefHeight="28.0" prefWidth="511.0" spacing="20.0">
+					<children>
+						<Label fx:id="Wgender" text="Select your Gender" textFill="RED" visible="false" />
+					</children>
+					<padding>
+						<Insets left="100.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="47.0" prefWidth="511.0" spacing="20.0">
+					<children>
+						<Label alignment="TOP_CENTER" prefHeight="18.0" prefWidth="171.0" text="PhoneNumber" />
+						<TextField fx:id="phoneText" prefHeight="26.0" prefWidth="164.0" promptText="Phone Number" />
+					</children>
+				</HBox>
+				<HBox prefHeight="28.0" prefWidth="511.0" spacing="20.0">
+					<children>
+						<Label fx:id="WphoneNumber" text="Enter A Valid Phone-Number" textFill="#e10c0c" visible="false" />
+					</children>
+					<padding>
+						<Insets left="100.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="47.0" prefWidth="511.0" spacing="20.0">
+					<children>
+						<Label alignment="TOP_CENTER" prefHeight="18.0" prefWidth="171.0" text="Email" />
+						<TextField fx:id="EmailText" prefHeight="26.0" prefWidth="164.0" promptText="Email" />
+					</children>
+				</HBox>
+				<HBox prefHeight="28.0" prefWidth="511.0" spacing="20.0">
+					<children>
+						<Label fx:id="Wemail" text="Enter A Valid Email" textFill="#ef0808" visible="false" />
+					</children>
+					<padding>
+						<Insets left="100.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="47.0" prefWidth="511.0" spacing="20.0">
+					<children>
+						<Label alignment="TOP_CENTER" prefHeight="18.0" prefWidth="171.0" text="Training Experiences" />
+						<TextField fx:id="TraningExp" prefHeight="26.0" prefWidth="164.0" promptText="Training Experiences" />
+					</children>
+				</HBox>
+				<HBox prefHeight="28.0" prefWidth="511.0" spacing="20.0" visible="false">
+					<children>
+						<Label fx:id="WTrExp" text="please Write about your Experiences" textFill="#ff0c0c" />
+					</children>
+					<padding>
+						<Insets left="100.0" />
+					</padding>
+				</HBox>
+            <HBox alignment="CENTER" prefHeight="47.0" prefWidth="511.0" spacing="20.0">
+               <children>
+                  <Button fx:id="addToTheExeButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#handelAddToExerSc" prefHeight="26.0" prefWidth="325.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Click Here to add The exercise you want to give" />
+               </children>
+            </HBox>
+            <HBox prefHeight="28.0" prefWidth="511.0" spacing="20.0" visible="false">
+               <children>
+                  <Label fx:id="WTrExp1" text="please Write about your Experiences" textFill="#ff0c0c" />
+               </children>
+               <padding>
+                  <Insets left="100.0" />
+               </padding>
+            </HBox>
+			</children>
+		</VBox>
+		<Button fx:id="addNewCoachButton" layoutX="249.0" layoutY="544.0" mnemonicParsing="false" onAction="#handelAddCoach" prefHeight="36.0" prefWidth="116.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Add New Coach" />
+      <Button contentDisplay="TOP" layoutX="478.0" layoutY="29.0" mnemonicParsing="false" onAction="#handelBack" prefHeight="26.0" prefWidth="100.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Back">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8_previous_52px_1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="180.0" layoutY="40.0" text="Add New Coach">
+         <font>
+            <Font name="Times New Roman Bold" size="23.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="270.0" layoutY="69.0" startX="-100.0" />
+      <Button layoutX="371.0" layoutY="544.0" mnemonicParsing="false" onAction="#handleClear" prefHeight="36.0" prefWidth="73.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Clear" />
+	</children>
+</Pane>

@@ -1,0 +1,638 @@
+ drop database powerhouse_gym;
+create database powerhouse_gym;
+use powerhouse_gym;
+-- ----------------------------------------------------------------------------------------------------------
+-- 1NF is done 
+-- 2NF is aleady done (we not have partial dependency)
+-- Table structure for table `coach` 
+--
+CREATE TABLE coach (
+  coachId int,
+  Fname varchar(20) DEFAULT NULL,
+  Lname varchar(20) DEFAULT NULL,
+  gender varchar(20) DEFAULT NULL,
+  trainingExperiences varchar (70), 
+  email varchar(50) DEFAULT NULL,
+  PRIMARY KEY (coachId) 
+) ;
+alter table coach  modify coachId int auto_increment ;
+alter table coach auto_increment =1;
+insert into coach (Fname,Lname,gender,trainingExperiences,email) 
+values ("Abdallah","Fialah","Male","Master degree of sports","Abdallah@gmail.com"),
+	   ("Aziz","Qaruosh","Male","Master degree","Aziz@gmail.com"),
+       ("Mahran","Quran","Male","Master of sports","Quran@gmail.com"),
+       ("Mohammad","Husain","Male","Bachelor of Sports","Moha12@gmail.com"),
+       ("Maumon","Nawahda","Male","Master degree of sports","Nawahda@gmail.com"),
+       ("Nadia","Ahmad","Female","Master degree of sports","AhmadNadia6@gmail.com"),
+       ("Lana","Fuad","Female","Master degree of sports","LanaFuad1@gmail.com");
+Select * from coach;
+
+
+-- ----------------------------------------------------------------------------------------------------------
+--
+-- Table structure for table `phonenumbercoach`
+--
+CREATE TABLE phoneNumberCoach (
+  coachId int,
+  phoneNumber varchar(20),
+  PRIMARY KEY (phoneNumber),
+  FOREIGN KEY (coachId) REFERENCES coach (coachId) on delete cascade
+) ;
+insert into phoneNumberCoach (coachId,phoneNumber)
+value (1, 0591111111),(1, 0592333333),(2, 0567876543),
+      (5, 0598765467),(4, 0567242424),(3, 0592312346),
+      (5, 0597234568),(6, 0597244568),(6, 0597222568),(7, 0597230068);
+Select * from phoneNumberCoach;
+-- ----------------------------------------------------------------------------------------------------------
+--
+-- Table structure for table `trainee`
+--
+CREATE TABLE trainee (
+  traineeId int,
+  coachId int,
+  Fname varchar(20) DEFAULT NULL,
+  Lname varchar(20) DEFAULT NULL,
+  gender varchar(20) DEFAULT NULL,
+  email varchar(50) DEFAULT NULL,
+  -- endDate date default null,
+  startDate date default null,
+  PRIMARY KEY (traineeId),
+  FOREIGN KEY (coachId) REFERENCES coach (coachId )  on delete set null
+) ;
+alter table trainee  modify traineeId int auto_increment ;
+alter table trainee auto_increment =1;
+       
+insert into trainee (coachId,Fname,Lname,gender,email, startDate)
+values (1,"Assi", "Al-Shekh","Male","AShekh56@gmail.com", '2022-1-1'),
+	   (1,"Eyan", "Ali","Male","Eyan12@gmail.com", '2022-1-1'),
+       (1,"Ahmad", "Nasser","Male","nAhmad@gmail.com",'2022-1-2'),
+       (1,"Rami", "Salameh","Male","Salameh112@gmail.com",'2022-1-2'),
+       (1,"Salem", "Abo Al-Baha","Male","Salem78@gmail.com",'2022-1-3'),
+       (1,"Tareq", "Sarsour","Male","Sarsour654@gmail.com",'2022-1-4'),
+       (1,"Mazen", "Hamad","Male","mazenH@gmail.com",'2022-1-5'),
+       (1,"Abbas", "Firnas","Male","Abbas456@gmail.com",'2022-1-5'),
+       (6,"Aseel","Ahmad","Female","AseelAhmad3@gmail.com",'2022-1-5'),
+       (6,"Sara","Mohammad","Female","MohammadSara2@gmail.com",'2022-1-6'),
+       (6,"Naqaa","Lotfi","Female","NaqaaLotfi54@gmail.com",'2022-1-6'),
+       (6,"Nemat","Kamel","Female","NematKamel999@gmail.com",'2022-1-6'),
+       (6,"Tala","Naem","Female","NaeemTala32@gmail.com",'2022-1-8'),
+       (6,"Lamar","kokash","Female","kokashLamar66@gmail.com",'2022-1-8'),
+       (7,"Raneen","Sadiq","Female","SadiqRaneen123@gmail.com",'2022-1-8'),
+       (7,"Miral","Moaz","Female","MiralMoaz7@gmail.com",'2022-1-8'),
+       (7,"Linda","khaled","Female","KhaledLinda12@gmail.com",'2022-1-10'),
+       (7,"Intemaa","Subhi","Female","SunhiIntemaa@gmail.com",'2022-1-11'),
+       (7,"Nada","Raji","Female","NadaRaji1@gmail.com",'2022-1-11'),
+       (3,"Abbas", "Firnas","Male","Abbas456@gmail.com",'2022-1-12'),
+       (3,"Ahmad","Mansi","Male","Amansi21@gmail.com",'2022-1-12'),
+	   (3,"Anas","munther","Male","MunAnas@gmail.com",'2022-1-12'),
+       (3,"Rafi","Asfour","Male","Rafi123@gmail.com",'2022-1-12'),
+       (4,"Ali","Mansi","Male","MansiAli21@gmail.com",'2022-1-13'),
+       (4,"Khalid","lafi","Male","KhaledLafi1@gmail.com",'2022-1-6'), 
+       (4,"Adel","Taweel","Male","AdelTaweel32@gmail.com",'2022-1-6'),
+       (2,"Ishaq","nofal","Male","nofalIshaq21@gmail.com",'2022-1-13'),
+       (2,"Waseem","sadi","Male","sadiWaseem@gmail.com",'2022-1-13'),
+       (2,"Ghaith","Marwan","Male","GhaithMarwan4@gmail.com",'2022-1-13'),
+       (5,"Muneer","mansour","Male","mansourMoneer3@gmail.com",'2022-1-13'),
+       (5,"Tawfiq","Mansi","Male","MansiTaw21@gmail.com",'2022-1-13'),
+       (5,"Amer","Ghazi","Male","GhaziAmer@gmail.com",'2022-1-13'),
+       (5,"Basel","nader","Male","BaselNader2@gmail.com",'2022-1-20');
+Select * from trainee;
+
+
+-- ----------------------------------------------------------------------------------------------------------
+--
+-- Table structure for table `phonenumbertrainee`
+--
+CREATE TABLE phoneNumberTrainee (
+  traineeId int,
+  phoneNumber varchar(20),
+  PRIMARY KEY (phoneNumber),
+  FOREIGN KEY (traineeId) REFERENCES trainee(traineeId)on delete cascade
+) ;
+insert into phoneNumberTrainee (traineeId,phoneNumber)
+value (1, 0564444221),(1, 0592211111),(2, 0592345333),(3, 0567876643),(4, 0598768887),
+      (5, 0567247654),(6, 290761250),(7, 0592312876),(8, 0597243268),(9, 290765456),(10, 290763578),
+      (11, 0590243268),(12, 0597244268),(13, 22908065),(14, 0598908268),(15, 0598918268),(16, 22908765),(17, 0591143268),
+      (18, 0597255268),(19, 0597266668),(20, 0562243268),(21, 0592625501),(22, 0592625500),(23, 0592625001),(24, 0592625901),
+      (25, 0592725501),(26, 229087651),(27, 0593625501),(28, 0592825501),(29, 0592625509),(30, 0592225501),(31, 0592620001),
+      (31, 0599999999),(32, 0596666601),(33, 0566625501),(14, 0592010101),(13, 0593333301),(22, 0592111111),(28, 0590000001)
+      ;
+Select * from phoneNumberTrainee;
+-- ----------------------------------------------------------------------------------------------------------
+--
+-- Table structure for table `administrator`
+--
+CREATE TABLE administrator (
+  administratorId int,
+  Fname varchar(20) DEFAULT NULL,
+  Lname varchar(20) DEFAULT NULL,
+  gender varchar(20) DEFAULT NULL,
+  email varchar(50) DEFAULT NULL,
+  passworde varchar(50),
+  primary key(administratorId)
+) ;
+alter table administrator  modify administratorId int auto_increment ;
+alter table administrator auto_increment =1;
+
+insert into administrator (Fname,Lname,gender,passworde,email)
+value ("Ali","Omar","Male","267146@d","Omar@gmail.com"),
+	  ("Maher","Fehmi","Male","267146@a","FAli@gmail.com");
+Select * from administrator;
+-- --------------------------------------------------------------------------------------
+-- create table adminLeadCoach(
+--   administratorId int NOT NULL,
+--   coachId int NOT NULL,
+--   PRIMARY KEY (coachId),
+--   FOREIGN KEY (administratorId) REFERENCES administrator (administratorId)
+--   );
+--   
+-- insert into adminLeadCoach (coachId,administratorId)
+-- value (1,2),
+-- 	     (2,1),
+--       (3,2),
+--       (4,1),
+--       (5,2);
+-- Select * from adminLeadCoach;
+-- ----------------------------------------------------------------------------------------------------------
+--
+-- Table structure for table `phonenumberadministrator`
+--
+CREATE TABLE phoneNumberAdministrator (
+  administratorId int,
+  phoneNumber varchar(20),
+  PRIMARY KEY (phoneNumber),
+  foreign key (administratorId) references administrator (administratorId) on delete cascade
+);
+insert into phoneNumberAdministrator (administratorId,phoneNumber)
+value (1,0591880111),(1,0567876511),(2,0567876861),(2,0598165467);
+Select * from phoneNumberAdministrator;
+-- ----------------------------------------------------------------------------------------------------------
+-- Table structure for table `schedulee`
+--
+CREATE TABLE schedulee (
+  scheduleName varchar (50),
+  scheduleId int, 
+  coachId int ,
+  theDay varchar(20) DEFAULT NULL,
+  startTime varchar(20) DEFAULT NULL,
+  endTime varchar(20) DEFAULT NULL,
+  PRIMARY KEY (scheduleId),
+  foreign key (coachId) references coach (coachId) on delete set null 
+) ;
+alter table schedulee  modify scheduleId int auto_increment ;
+alter table schedulee auto_increment =1;
+-- drop table schedulee;
+insert into schedulee (scheduleName,coachId,theDay,startTime,endTime)
+values ("Spinning",1,"Sunday","11:25 am","2:05 pm"),
+	   ("Tep Aerobics",2,"Monday","2:15 pm","4:55 pm"),
+       ("Zumba Toning",3,"Sunday","5:00 pm","8:00 pm"),
+       ("Body Shaping",4,"Wednesday","9:00 am","12:00 pm"),
+       ("Functional Training & TRX",5,"Saterday","4:00 pm","6:00 pm"),
+       ("Cardio &Abs",6,"Thursday","10:00 am","12:00 pm"),
+       ("Yoga for Diabetes",7,"Saterday","8:00 pm","10:00 pm");
+Select * from schedulee;
+-- -----------------------------------------------------------------------------------------------------------
+CREATE TABLE play(
+  traineeId int ,
+  scheduleId int,
+ -- primary key (traineeId),
+  FOREIGN KEY (traineeId) REFERENCES trainee(traineeId) on delete cascade,
+  FOREIGN KEY (scheduleId) REFERENCES schedulee(scheduleId) on delete set null);
+  insert into play(traineeId ,scheduleId)
+  values (1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,1),
+         (9,1),(10,1),(11,6),(12,6),(13,6),(14,6),(15,7),(16,7),
+         (17,7),(18,7),(19,7),(20,3),(21,3),(22,3),(23,3),(24,4),
+         (25,4),(26,4),(27,2),(28,2),(29,2),(30,5),(31,5),(32,5),
+         (33,5);
+select * from play;
+
+-- drop table play;
+-- ---------------------------------------------------------------------------------------------
+create table ActivitySchedualee(
+		 scheduleId int,
+         activity varchar(100),
+         foreign key (scheduleId) references schedulee (scheduleId) on delete set null);
+insert into ActivitySchedualee(scheduleId,activity)
+values (1,"Leg exercises,Shoulder and abdominal exercises"),
+	   (2,"Back and bicep exercises, Abdominal and bicep exercises"),
+       (3,"Front squat exercise,Deadlift leg extension,Incline db press"),
+       (4,"Back and bicep exercises, Abdominal and bicep exercises"),
+       (5,"Front squat exercise,Deadlift leg extension"),
+       (6,"Standing calf, Incline db press, Machine press,Leg exercises"),
+       (7,"Back and bicep exercises,Leg exercises, Machine press");
+Select * from ActivitySchedualee;
+-- ----------------------------------------------------------------------------------------------------------
+--
+-- Table structure for table `manage`
+--
+-- CREATE TABLE manage (
+--   scheduleId int NOT NULL,  
+--   coachId int NOT NULL,
+--   FOREIGN KEY (scheduleId) REFERENCES schedulee (scheduleId),
+--   FOREIGN KEY (coachId) REFERENCES coach (coachId)
+-- );
+-- insert into manage (scheduleId,coachId)
+-- value (1,1),
+--       (2,2),
+-- 	  (3,3),
+--       (4,4),
+--       (5,5),
+--       (6,6),
+--       (7,7),
+--       (8,1),
+--       (9,2);
+
+-- Select * from manage;
+-- ----------------------------------------------------------------------------------------------------------
+--
+-- Table structure for table `membership`
+--
+ 
+CREATE TABLE membership (
+  membershipId int,
+ -- traineeId int NOT NULL,
+  membershipType varchar(20) DEFAULT NULL,
+  Duration varchar(20) DEFAULT NULL,
+  price varchar(20) DEFAULT NULL,
+  PRIMARY KEY (membershipId)
+  );
+alter table membership  modify membershipId int auto_increment ;
+alter table membership auto_increment =1;
+
+insert into membership (membershipType,Duration,price)
+value ("Student membership","1 month","50 nis"),
+	  ("Employee membership","3 month","100 nis"),
+      ("Silver membership","6 month","250 nis"),
+      ("gold membership","1 year","900 nis");
+
+Select * from membership;
+
+
+-- ----------------------------------------------------------------------------------------------------------
+--
+-- Table structure for table `orgnize`
+--
+CREATE TABLE orgnize (
+  membershipId int,
+  administratorId int,
+  FOREIGN KEY (membershipId) REFERENCES membership (membershipId) on delete set null,
+  FOREIGN KEY (administratorId) REFERENCES administrator (administratorId) on delete set null 
+  ) ;
+insert into orgnize (membershipId,administratorId)
+value(1,1),
+	 (2,1),
+     (3,2),
+     (4,2);
+Select * from orgnize;
+
+-- ----------------------------------------------------------------------------------------------------------
+--
+-- Table structure for table `traineejoinpayment`
+--
+CREATE TABLE traineeJoinPayment (
+  traineeId int,
+  membershipId int,
+  -- primary key(membershipId),
+  amountRequired varchar(30) DEFAULT NULL,
+  amountPaid varchar(30) DEFAULT NULL,
+  remainingAmount varchar(30) DEFAULT NULL,
+  paidDate date  DEFAULT NULL,
+  FOREIGN KEY (membershipId) REFERENCES membership (membershipId) on delete set null,
+  FOREIGN KEY (traineeId) REFERENCES trainee (traineeId) on delete set null
+) ;
+ 
+select month(paidDate) as Month ,sum(amountPaid) as Sum_Paid_Each_Month
+from traineeJoinPayment
+group by month(paidDate) ;
+
+select year(PaidDate) as Year , sum(amountPaid) as  Sum_Paid_Each_Year
+from traineeJoinPayment
+group by year(paidDate) order by (paidDate);
+
+
+ select year(PaidDate) as Current_Year, sum(amountPaid) as Sum_Paid
+ from traineeJoinPayment
+ where YEAR(paidDate)= YEAR(now());
+ 
+select month(PaidDate) Current_Month ,sum(amountPaid) as Sum_Paid
+from traineeJoinPayment
+where month(paidDate) = month(now());
+ 
+ 
+ 
+
+-- select trainee.traineeId, trainee.Fname, trainee.Lname, trainee.startDate ,
+
+-- if (traineeJoinPayment.membershipId = 1, DATE_ADD(trainee.startDate, INTERVAL 1 MONTH),"-") as EndDateStudentMemberShip ,
+-- if (traineeJoinPayment.membershipId = 2, DATE_ADD(trainee.startDate, INTERVAL 3 MONTH),"-") as EndDateEmployeeMemberShip,
+-- if (traineeJoinPayment.membershipId = 3, DATE_ADD(trainee.startDate, INTERVAL 6 Month),"-") as EndDateSilverMemberShip,
+-- if (traineeJoinPayment.membershipId = 4, DATE_ADD(trainee.startDate, INTERVAL 1 year),"-") as EndDateGoldMemberShip
+-- from trainee , traineeJoinPayment, membership
+-- where trainee.traineeId = traineeJoinPayment.traineeId and 
+--        membership.membershipId = traineeJoinPayment.membershipId order by trainee.traineeId;
+       
+select trainee.startDate from trainee;
+select trainee.traineeId, trainee.Fname, trainee.Lname, membership.membershipType ,trainee.startDate,
+    (
+    CASE 
+        WHEN traineeJoinPayment.membershipId = 1 THEN DATE_ADD(startDate, INTERVAL 1 MONTH)
+        WHEN traineeJoinPayment.membershipId = 2 THEN DATE_ADD(startDate, INTERVAL 3 MONTH)
+        WHEN traineeJoinPayment.membershipId = 3 THEN DATE_ADD(startDate, INTERVAL 6 MONTH)
+        WHEN traineeJoinPayment.membershipId = 4 THEN DATE_ADD(startDate, INTERVAL 1 YEAR)
+        ELSE 1
+    END) AS endDate
+ from trainee , traineeJoinPayment, membership
+where trainee.traineeId = traineeJoinPayment.traineeId and 
+       membership.membershipId = traineeJoinPayment.membershipId 
+       order by Lname ;
+
+ 
+ select trainee.traineeId, trainee.startDate , DATE_ADD(trainee.startDate, INTERVAL 3 MONTH) result
+ from trainee , traineeJoinPayment
+ where trainee.traineeId = traineeJoinPayment.traineeId
+ and membershipId = 2;
+ 
+ select trainee.traineeId, trainee.startDate , DATE_ADD(trainee.startDate, INTERVAL 1 year) result
+ from trainee , traineeJoinPayment
+ where trainee.traineeId = traineeJoinPayment.traineeId
+ and membershipId = 3;
+ 
+
+insert into traineeJoinPayment (traineeId,membershipId,amountRequired,amountPaid,remainingAmount,paidDate)
+value (1,1,"50 nis","50 nis","0 nis","2021-12-30"),
+	  (2,2,"100 nis","100 nis","0 nis","2022-1-1"),
+      (3,3,"250 nis","200 nis","50 nis","2022-1-3"),
+      (4,4,"900 nis","600 nis","300 nis","2022-1-5"),
+      (5,1,"50 nis","50 nis","0 nis","2022-1-7"),
+      (6,1,"50 nis","50 nis","0 nis","2022-1-8"),
+      (7,2,"100 nis","100 nis","0 nis","2022-1-8"),
+      (8,3,"250 nis","150 nis","100 nis","2022-1-9"),
+	  (9,3,"250 nis","250 nis","0 nis","2022-1-9"),
+	  (10,1,"50 nis","50 nis","0 nis","2022-1-9"),
+      (11,2,"100 nis","50 nis","50 nis","2022-1-10"),
+      (12,4,"900 nis","750 nis","150 nis","2022-1-10"),
+      (13,3,"250 nis","250 nis","0 nis","2022-1-10"),
+      (14,2,"100 nis","100 nis","0 nis","2022-1-11"),
+      (15,1,"50 nis","50 nis","0 nis","2022-1-11"),
+      (16,2,"100 nis","100 nis","0 nis","2022-1-11"),
+      (17,3,"250 nis","250 nis","0 nis","2022-1-12"),
+      (18,3,"250 nis","150 nis","100 nis","2022-1-12"),
+      (19,4,"900 nis","650 nis","250 nis","2022-1-12"),
+      (20,3,"250 nis","200 nis","50 nis","2022-1-12"),
+      (21,1,"50 nis","50 nis","0 nis","2022-1-12"),
+      (22,4,"900 nis","450 nis","450 nis","2022-1-12"),
+      (23,3,"250 nis","100 nis","150 nis","2022-1-11"),
+      (24,1,"50 nis","50 nis","0 nis","2022-1-10"),
+      (25,2,"100 nis","100 nis","0 nis","2022-1-7"),
+      (26,4,"900 nis","500 nis","400 nis","2022-1-7"),
+      (27,3,"250 nis","150 nis","100 nis","2022-1-9"),
+      (28,2,"100 nis","50 nis","50 nis","2022-1-2"),
+      (29,3,"250 nis","250 nis","0 nis","2022-1-5"),
+      (30,4,"900 nis","700 nis","200 nis","2022-1-2"),
+      (31,4,"900 nis","900 nis","0 nis","2022-1-6"),
+      (32,3,"250 nis","100 nis","150 nis","2022-1-8"),
+      (33,3,"100 nis","100 nis","0 nis","2022-1-10");
+Select * from traineeJoinPayment;
+select count(*)  from traineeJoinPayment;
+select count(*) as totalStudent from traineeJoinPayment where membershipId = "4";
+-- ----------------------------------------------------------------------------------------------------------
+-- view inforation of payment 
+select trainee.traineeId,membership.membershipType,traineeJoinPayment.amountRequired,
+traineeJoinPayment.amountPaid,traineeJoinPayment.remainingAmount, traineeJoinPayment.paidDate
+from trainee,traineeJoinPayment,membership
+where trainee.traineeId = traineeJoinPayment.traineeId and 
+      membership.membershipId = traineeJoinPayment.membershipId ;
+      
+-- view number of trainee in each class. . . . 
+select coach.Fname, coach.Lname ,scheduleName,theDay,startTime,endTime, count(trainee.traineeId) 
+from trainee, schedulee , play ,coach
+where trainee.traineeId = play.traineeId and 
+      play.scheduleId = schedulee.scheduleId and 
+      schedulee.coachId = coach.coachId
+group by coach.coachId;
+
+-- view coach informatiom . . .
+select coach.coachId,coach.Fname,coach.Lname,coach.gender,coach.trainingExperiences,coach.email,
+count(trainee.traineeId),phoneNumber
+from coach,trainee,phoneNumberCoach
+where coach.coachId = trainee.coachId and 
+      phoneNumberCoach.coachId = coach.coachId
+group by phoneNumberCoach.phoneNumber ;
+
+
+
+select * from coach;
+select schedulee.scheduleId,schedulee.scheduleName,ActivitySchedualee.activity
+from ActivitySchedualee , schedulee 
+where ActivitySchedualee.scheduleId = schedulee.scheduleId;
+-- select trainee.traineeId as t_tid ;
+-- select traineeJoinPayment.traineeId as joint_tid;
+-- select email
+-- from trainee join traineeJoinPayment 
+-- where  t_tid = joint_tid and paymentId = 331;
+
+select trainee.email
+from trainee;
+
+select count(*) from ActivitySchedualee;
+select * from schedulee;
+
+
+select count(*) from traineeJoinPayment;
+-- show the email of trainee where payment id = 331 ..
+-- select trainee.email
+-- from trainee join traineeJoinPayment
+-- where trainee.traineeId = traineeJoinPayment.traineeId and paymentId =331;
+
+-- show full name of coach where admin id = 2..
+-- select coach.Fname, coach.Lname
+-- from coach join adminLeadCoach 
+-- where coach.coachId = adminLeadCoach.coachId and 
+-- administratorId = 2;
+
+-- show the all trainee names and email which his admin 2 
+-- select trainee.email, coach.coachId
+-- from trainee join coach join adminLeadCoach 
+-- where trainee.coachId = coach.coachId and 
+-- 	  coach.coachId = adminLeadCoach.coachId and 
+--       administratorId   = 2;
+-- show the all trainee names and email which his admin 1
+-- select trainee.email, coach.coachId
+-- from trainee join coach join adminLeadCoach 
+-- where trainee.coachId = coach.coachId and 
+-- 	  coach.coachId = adminLeadCoach.coachId and 
+--       administratorId   = 1;
+
+-- the number of trainee in club 
+select count(*)
+from trainee;
+
+select count(*)
+from traineeJoinPayment;
+
+-- the number of coach in club 
+select count(*) as total
+from coach;
+-- the number of admin in club 
+select count(*)
+from administrator;
+
+-- the number of schaduale in club 
+select count(*)
+from  schedulee;
+
+-- the number of trainee where membership monthly
+-- select count(*)
+-- from membership
+-- where membershipType ='Monthly';
+
+-- the number of trainee where membership yearly 
+-- select count(*)
+-- from membership
+-- where membershipType ='annual';
+-- Select * from schedulee;
+
+-- update powerhouse_gym.trainee set endtime = '" + neweTime + "' where scheduleId = "
+-- 				+ (scheduleIdTextField.getText()) + ";
+--                 
+-- Insert into schedulee (scheduleName,scheduleId,datee,startTime,endTime) values
+-- 					('bob ',1  ,rc.getDatee() + "','" + rc.getStartTime()+ "','" + rc.getEndTime() +"');
+
+-- Select trainee.traineeId 
+-- from trainee 
+-- group by coachId ;
+
+-- select membership.membershipId
+-- from membership
+-- group by membershipType = 'Monthly' ;
+
+-- SELECT count(*) traineeId 
+-- FROM trainee,coach
+-- WHERE trainee.coachId = coach.coachId 
+-- and coach.coachId = 4
+-- GROUP BY traineeId ;
+
+-- SELECT sum(traineeId) traineeId 
+-- FROM trainee,coach
+-- WHERE trainee.coachId = coach.coachId 
+-- and coach.coachId = 4
+-- GROUP BY traineeId ;
+
+-- SELECT count(membershipId) membershipId , membershipType
+-- FROM membership
+-- WHERE  membershipType = 'Silver membership'
+-- GROUP BY membershipType ;
+-- Select * from membership;
+
+-- SELECT count(membershipId) membershipId ,membershipType
+-- FROM membership
+-- WHERE  membershipType = 'Monthly'
+-- GROUP BY membershipType ;
+
+-- select count(*)
+-- from trainee 
+-- where gender = "Female";
+-- select sum(traineeId) traineeId
+-- from membership, traineeJoinPayment 
+-- where membershipType = 'Anuual'
+-- group by traineeId;
+-- carmel 
+--  select coach.Fname, coach.Lname ,scheduleName,count(trainee.traineeId)
+-- from trainee, schedulee , play ,coach 
+-- where trainee.traineeId = play.traineeId and 
+--  play.scheduleId = schedulee.scheduleId and 
+--  schedulee.coachId = coach.coachId
+--  group by scheduleName and coach.Fname like  '% + fName + % and  Lname  like % + lName + %' ;
+
+
+-- select coach.coachId,coach.Fname,coach.Lname,coach.gender,coach.trainingExperiences, coach.email, count(trainee.traineeId)
+-- from coach,trainee 
+-- where coach.coachId = trainee.coachId
+-- group by coach.coachId and coach.Fname like '% + fName + % and + Lname  like % + lName + %' ;
+
+-- insert into coach (Fname,Lname,gender,trainingExperiences,email)value("dodo","abood","ydjd","","dodo@gmail");
+-- select * from coach;
+-- select coachId from coach 
+-- where Fname="lana" and coach.Lname="fuad";
+
+
+
+--  select coach.coachId,coach.Fname,coach.Lname,coach.gender,coach.trainingExperiences,
+-- 							 coach.email, count(trainee.traineeId) from coach,trainee 
+-- 							where coach.coachId = trainee.coachId and coach.Fname like  '%a%' and coach.lname like '%Ahmad%'
+--                             group by coach.coachId;
+                      --      order by coachid desc 
+                       --     limit 1 ;
+
+    --    ("Mahran","Quran","Male","Master's of sports","Quran@gmail.com"),
+    --    ("Mohammad","Husain","Male","Bachelor of Sports","Moha12@gmail.com"),
+     --   ("Maumon","Nawahda","Male","Master's degree of sports","Nawahda@gmail.com"),
+     --   ("Nadia","Ahmad","Female","Master's degree of sports","AhmadNadia6@gmail.com"),
+      --  ("Lana","Fuad","Female","Master's degree of sports","LanaFuad1@gmail.com");
+
+
+-- select coach.coachId,coach.Fname,coach.Lname,coach.gender,coach.trainingExperiences,
+-- 							coach.email, count(trainee.traineeId) from coach,trainee 
+-- 							where coach.coachId = trainee.coachId and  coach.Fname like '%a%' and coach.Lname  like '%f%' 
+--                             group by coach.coachId ;
+
+
+-- select trainee.traineeId ,concat (trainee.Fname ," " ,trainee.lname) as tname  ,concat(coach.Fname ," ", coach.lname )
+--   as coachName ,trainee.gender ,trainee.email ,phoneNumber ,m.membershipType
+-- from trainee t  , coach c  ,  phoneNumberTrainee pt , traineeJoinPayment tp , membership m
+-- 					where 
+-- 					        t.coachId = c.coachId 
+-- 							and pt.traineeId = t.traineeId 
+--                             and  tp.traineeId = t.traineeId
+--                             and m.membershipId = tp.membershipId
+-- 							and tname like "Dalia kusbeh";
+
+
+
+select coach.Fname, coach.Lname ,scheduleName,count(trainee.traineeId) 
+ from trainee, schedulee , play ,coach 
+ where trainee.traineeId = play.traineeId and 
+ play.scheduleId = schedulee.scheduleId and 
+ schedulee.coachId = coach.coachId 
+ and coach.Fname like  '%a%' and  coach.Lname  like '%q%'
+ group by coach.coachId ;
+
+-- delete  from membership where membershipId = 1 ;
+select * from traineeJoinPayment;
+
+select membership.membershipId , membership.membershipType, membership.Duration, membership.price, 
+count(membership.membershipId)
+from membership,traineeJoinPayment
+where membership.membershipId = traineeJoinPayment.membershipId 
+group by membershipId;
+
+select * from coach; 
+select coach.coachId,coach.Fname,coach.Lname,coach.gender,
+					 coach.trainingExperiences,coach.email,
+					 count(trainee.traineeId),phoneNumber
+					  from coach,trainee,phoneNumberCoach 
+					 where coach.coachId = trainee.coachId and 
+					 phoneNumberCoach.coachId = coach.coachId 
+					 group by phoneNumberCoach.phoneNumber ;
+                     
+                     
+                     
+select trainee.Fname,trainee.Lname, scheduleName
+from play,trainee, schedulee
+where trainee.traineeId = play.traineeId and 
+	  play.scheduleId = schedulee.scheduleId
+group by trainee.traineeId;
+
+select trainee.traineeId ,trainee.Fname , trainee.Lname 
+from trainee , play , schedulee
+where trainee.traineeId = play.traineeId and 
+      schedulee.scheduleId = play.scheduleId and 
+      schedulee.scheduleName = 'Spinning';
+      
+select count(*)
+from trainee , play , schedulee
+where trainee.traineeId = play.traineeId and 
+      schedulee.scheduleId = play.scheduleId and 
+      schedulee.scheduleName = 'Spinning';
+
+select trainee.startDate from trainee;

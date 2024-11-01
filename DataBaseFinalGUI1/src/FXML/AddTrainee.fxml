@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="786.0" styleClass="backGround" stylesheets="@../CSS/fullPackUpStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddTraineeController">
+	<children>
+		<VBox layoutX="74.0" layoutY="71.0" prefHeight="563.0" prefWidth="638.0" spacing="2.0">
+			<children>
+				<HBox prefHeight="46.0" prefWidth="568.0" spacing="50.0">
+					<children>
+						<Label alignment="CENTER" prefHeight="22.0" prefWidth="173.0" text="First Name">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+						<TextField fx:id="FirstNameTextField" prefHeight="26.0" prefWidth="173.0" promptText="First Name" />
+					</children>
+					<padding>
+						<Insets top="5.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="38.0" prefWidth="568.0">
+					<children>
+						<Label />
+						<Label fx:id="WFirstName" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="198.0" text="Enter A valid Name" textFill="RED" visible="false" />
+					</children>
+				</HBox>
+				<HBox prefHeight="46.0" prefWidth="568.0" spacing="50.0">
+					<children>
+						<Label alignment="CENTER" prefHeight="22.0" prefWidth="173.0" text="Last Name">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+						<TextField fx:id="LastNameTextField" prefHeight="26.0" prefWidth="172.0" promptText="Last Name" />
+					</children>
+					<padding>
+						<Insets top="5.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="38.0" prefWidth="568.0">
+					<children>
+						<Label />
+						<Label fx:id="WLastName" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="198.0" text="Enter A valid Name" textFill="RED" visible="false" />
+					</children>
+				</HBox>
+				<HBox prefHeight="46.0" prefWidth="568.0" spacing="50.0">
+					<children>
+						<Label alignment="CENTER" prefHeight="22.0" prefWidth="179.0" text="Gender">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+						<RadioButton fx:id="maleRB" mnemonicParsing="false" text="Male">
+							<toggleGroup>
+								<ToggleGroup fx:id="genderToggleGroup" />
+							</toggleGroup>
+						</RadioButton>
+						<RadioButton fx:id="FemaleRB" mnemonicParsing="false" text="Female" toggleGroup="$genderToggleGroup" />
+					</children>
+				</HBox>
+				<HBox prefHeight="38.0" prefWidth="568.0">
+					<children>
+						<Label />
+						<Label fx:id="WGender" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="198.0" text="Select Your Gender" textFill="RED" visible="false" />
+					</children>
+				</HBox>
+				<HBox prefHeight="46.0" prefWidth="568.0" spacing="50.0">
+					<children>
+						<Label alignment="CENTER" prefHeight="22.0" prefWidth="176.0" text="Email">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+						<TextField fx:id="EmailTextField" prefHeight="26.0" prefWidth="167.0" promptText="Email" />
+					</children>
+				</HBox>
+				<HBox prefHeight="38.0" prefWidth="568.0">
+					<children>
+						<Label />
+						<Label fx:id="WEmail" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="198.0" text="Enter Your Email" textFill="RED" visible="false" />
+					</children>
+				</HBox>
+				<HBox prefHeight="46.0" prefWidth="568.0" spacing="50.0">
+					<children>
+						<Label alignment="CENTER" prefHeight="22.0" prefWidth="174.0" text="Phone">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+						<TextField fx:id="phoneTextField" prefHeight="26.0" prefWidth="172.0" promptText="Phone" />
+					</children>
+					<padding>
+						<Insets top="5.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="38.0" prefWidth="568.0">
+					<children>
+						<Label />
+						<Label fx:id="WphoneNum" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="198.0" text="Enter Your Phone Number" textFill="RED" visible="false" />
+					</children>
+				</HBox>
+				<HBox prefHeight="46.0" prefWidth="568.0" spacing="50.0">
+					<children>
+						<Label alignment="CENTER" prefHeight="22.0" prefWidth="176.0" text="Your Coach">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+						<ComboBox fx:id="coachCoBox" prefHeight="26.0" prefWidth="175.0" promptText="Select Your Coach" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+					</children>
+					<padding>
+						<Insets top="5.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="38.0" prefWidth="568.0">
+					<children>
+						<Label />
+						<Label fx:id="WSelectCoach" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="198.0" text="Select Your Coach" textFill="RED" visible="false" />
+					</children>
+				</HBox>
+				<HBox prefHeight="46.0" prefWidth="568.0" spacing="50.0">
+					<children>
+						<Label alignment="CENTER" prefHeight="22.0" prefWidth="176.0" text="Select Exercise Schedule">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+						<ComboBox fx:id="selectSch1" prefHeight="26.0" prefWidth="179.0" promptText="Select Schedule" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+						<ComboBox fx:id="selectSch2" prefHeight="26.0" prefWidth="174.0" promptText="Select Schedule" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+					</children>
+					<padding>
+						<Insets top="5.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="38.0" prefWidth="568.0">
+					<children>
+						<Label />
+						<Label fx:id="WselectEx" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="198.0" text="Select Exercise Schedule" textFill="RED" visible="false" />
+					</children>
+				</HBox>
+				<HBox prefHeight="46.0" prefWidth="568.0" spacing="50.0">
+					<children>
+						<VBox prefHeight="50.0" prefWidth="201.0" spacing="10.0">
+							<children>
+								<Label alignment="CENTER" prefHeight="22.0" prefWidth="151.0" text="Select MemberShip">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
+							</children>
+						</VBox>
+						<VBox prefHeight="46.0" prefWidth="188.0" spacing="10.0">
+							<children>
+								<RadioButton fx:id="studentRB" mnemonicParsing="false" text="Student  (1 month)">
+									<toggleGroup>
+										<ToggleGroup fx:id="memberShipToggleGroup" />
+									</toggleGroup>
+								</RadioButton>
+								<RadioButton fx:id="EmpRB" mnemonicParsing="false" text="Employee (1 month)" toggleGroup="$memberShipToggleGroup" />
+							</children>
+							<HBox.margin>
+								<Insets />
+							</HBox.margin>
+							<padding>
+								<Insets top="5.0" />
+							</padding>
+						</VBox>
+						<VBox prefHeight="50.0" prefWidth="176.0" spacing="10.0">
+							<children>
+								<RadioButton fx:id="SilverRB" mnemonicParsing="false" text="Silver (3 months)" toggleGroup="$memberShipToggleGroup" />
+							</children>
+						</VBox>
+						<VBox prefHeight="46.0" prefWidth="150.0" spacing="10.0">
+							<children>
+								<RadioButton fx:id="GoldRB" mnemonicParsing="false" text="Gold (1 Year)" toggleGroup="$memberShipToggleGroup" />
+							</children>
+						</VBox>
+					</children>
+				</HBox>
+            <HBox prefHeight="38.0" prefWidth="568.0">
+               <children>
+                  <Label fx:id="WMemberShip" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="198.0" text="Select Your MemberShip" textFill="RED" visible="false" />
+               </children>
+            </HBox>
+				<HBox prefHeight="46.0" prefWidth="568.0" spacing="50.0">
+					<children>
+						<Label alignment="CENTER" prefHeight="22.0" prefWidth="174.0" text="Paid">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+						<TextField fx:id="paidText" prefHeight="26.0" prefWidth="178.0" promptText="Paid Amount" />
+						<Button mnemonicParsing="false" onAction="#HandelpaymentAmount" prefHeight="26.0" prefWidth="165.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Payment Amount Required" />
+					</children>
+					<VBox.margin>
+						<Insets top="20.0" />
+					</VBox.margin>
+				</HBox>
+      				<HBox prefHeight="38.0" prefWidth="568.0">
+      	<children>
+      						<Label fx:id="WpaidLabel" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="198.0" text="Please Enter the ammount paid" textFill="RED" visible="false" />
+      					</children>
+      				</HBox>
+			</children>
+			<padding>
+				<Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+			</padding>
+		</VBox>
+		<Button fx:id="addButton" layoutX="293.0" layoutY="628.0" mnemonicParsing="false" onAction="#handelNewTrainee" prefHeight="37.0" prefWidth="198.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Add new Trainee" />
+      <Button contentDisplay="TOP" layoutX="634.0" layoutY="29.0" mnemonicParsing="false" onAction="#handelBack" prefHeight="50.0" prefWidth="95.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Back">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8_previous_52px_1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="260.0" layoutY="29.0" prefHeight="25.0" prefWidth="179.0" text="Add New Trainee">
+         <font>
+            <Font name="Times New Roman Bold" size="22.0" />
+         </font>
+      </Label>
+      <Line endX="177.20001220703125" endY="3.814697265625E-6" layoutX="338.0" layoutY="59.0" startX="-100.0" />
+      <Button layoutX="504.0" layoutY="628.0" mnemonicParsing="false" onAction="#handleClear" prefHeight="37.0" prefWidth="90.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Clear" />
+	</children>
+</Pane>

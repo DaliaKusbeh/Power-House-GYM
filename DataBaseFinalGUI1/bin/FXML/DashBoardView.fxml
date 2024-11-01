@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="881.0" styleClass="backGround" stylesheets="@../CSS/fullPackUpStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashBoardController">
+	<children>
+		<Text fx:id="resText" layoutX="519.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="156.5367431640625" />
+		<Text fx:id="resText1" layoutX="113.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="156.5367431640625" />
+		<Pane layoutY="12.0" prefHeight="84.0" prefWidth="857.0" styleClass="container" stylesheets="@../CSS/fullPackUpStyle.css">
+			<children>
+				<Text layoutX="-53.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="       Home" wrappingWidth="730.9999999999999">
+					<font>
+						<Font name="Bank Gothic Medium BT" size="36.0" />
+					</font>
+				</Text>
+				<VBox layoutX="678.0" layoutY="-2.0" prefHeight="92.0" prefWidth="200.0" spacing="5.0">
+					<children>
+						<Text fx:id="dateTextField" strokeType="OUTSIDE" strokeWidth="0.0" text=".." wrappingWidth="167.779052734375">
+							<font>
+								<Font name="Bank Gothic Medium BT" size="22.0" />
+							</font>
+						</Text>
+						<Text fx:id="dayTextField" strokeType="OUTSIDE" strokeWidth="0.0" text=".." wrappingWidth="172.5789794921875">
+							<font>
+								<Font name="Bank Gothic Medium BT" size="22.0" />
+							</font>
+						</Text>
+					</children>
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
+					</padding>
+				</VBox>
+				<Line endX="376.60003662109375" endY="-3.814697265625E-6" layoutX="303.0" layoutY="44.0" startX="-153.8000030517578" startY="-3.814697265625E-6" />
+			</children>
+		</Pane>
+		<VBox layoutX="141.0" layoutY="126.0" prefHeight="488.0" prefWidth="619.0" styleClass="container" stylesheets="@../CSS/fullPackUpStyle.css">
+			<children>
+				<HBox prefHeight="109.0" prefWidth="617.0">
+					<children>
+						<VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+							<children>
+								<ImageView fitHeight="28.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../icon/icons8_dumbbell_50px.png" />
+									</image>
+								</ImageView>
+								<Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Trainees" textAlignment="CENTER" wrappingWidth="300.9999999999998">
+									<font>
+										<Font name="System Bold" size="25.0" />
+									</font>
+								</Text>
+								<Label fx:id="traineesLabek" alignment="CENTER" prefHeight="14.0" prefWidth="291.0" text="Label">
+									<font>
+										<Font name="System Bold" size="25.0" />
+									</font>
+								</Label>
+							</children>
+						</VBox>
+						<VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="2.0">
+							<children>
+								<ImageView fitHeight="36.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../icon/icons8_fitness_50px.png" />
+									</image>
+								</ImageView>
+								<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Coaches" textAlignment="CENTER" wrappingWidth="278.4421264648438">
+									<font>
+										<Font name="System Bold" size="25.0" />
+									</font>
+								</Text>
+								<Label fx:id="coachesLabel" alignment="CENTER" prefHeight="30.0" prefWidth="301.0" text="Label">
+									<font>
+										<Font name="System Bold" size="25.0" />
+									</font>
+								</Label>
+							</children>
+						</VBox>
+					</children>
+				</HBox>
+				<HBox prefHeight="11.0" prefWidth="591.0">
+					<children>
+						<Line endX="505.69287109375" endY="-4.449796676635742" startX="-100.0" />
+					</children>
+				</HBox>
+				<HBox prefHeight="100.0" prefWidth="200.0">
+					<children>
+						<VBox alignment="CENTER" prefHeight="102.0" prefWidth="622.0">
+							<children>
+								<ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../icon/icons8_membership_card_100px.png" />
+									</image>
+								</ImageView>
+								<Label text="Membership">
+									<font>
+										<Font name="System Bold" size="19.0" />
+									</font>
+								</Label>
+								<Label text="Type">
+									<font>
+										<Font name="System Bold" size="19.0" />
+									</font>
+								</Label>
+							</children>
+							<HBox.margin>
+								<Insets right="10.0" />
+							</HBox.margin>
+						</VBox>
+					</children>
+				</HBox>
+				<HBox prefHeight="100.0" prefWidth="200.0">
+					<children>
+						<VBox alignment="CENTER" prefHeight="100.0" prefWidth="175.0" spacing="5.0">
+							<children>
+								<Label alignment="CENTER" prefHeight="21.0" prefWidth="90.0" text="Student">
+									<font>
+										<Font name="System Bold" size="24.0" />
+									</font>
+								</Label>
+								<Label fx:id="studentReslabel" alignment="CENTER" prefHeight="10.0" prefWidth="50.0" text="Label">
+									<font>
+										<Font name="System Bold" size="24.0" />
+									</font>
+								</Label>
+							</children>
+							<HBox.margin>
+								<Insets right="5.0" />
+							</HBox.margin>
+						</VBox>
+						<VBox alignment="CENTER" prefHeight="100.0" prefWidth="153.0" spacing="5.0">
+							<children>
+								<Label alignment="CENTER" prefHeight="2.0" prefWidth="110.0" text="Employee">
+									<font>
+										<Font name="System Bold" size="24.0" />
+									</font>
+								</Label>
+								<Label fx:id="EmployeeresLabel" alignment="CENTER" prefHeight="0.0" prefWidth="50.0" text="Label">
+									<font>
+										<Font name="System Bold" size="24.0" />
+									</font>
+								</Label>
+							</children>
+							<HBox.margin>
+								<Insets right="5.0" />
+							</HBox.margin>
+						</VBox>
+						<VBox alignment="CENTER" prefHeight="100.0" prefWidth="148.0" spacing="5.0">
+							<children>
+								<Label alignment="CENTER" text="Silver">
+									<font>
+										<Font name="System Bold" size="24.0" />
+									</font>
+								</Label>
+								<Label fx:id="silverResLabel" alignment="CENTER" text="Label">
+									<font>
+										<Font name="System Bold" size="24.0" />
+									</font>
+								</Label>
+							</children>
+							<HBox.margin>
+								<Insets right="5.0" />
+							</HBox.margin>
+						</VBox>
+						<VBox alignment="CENTER" prefHeight="100.0" prefWidth="163.0" spacing="5.0">
+							<children>
+								<Label alignment="CENTER" text="Gold">
+									<font>
+										<Font name="System Bold" size="24.0" />
+									</font>
+								</Label>
+								<Label fx:id="goldresLabel" alignment="CENTER" prefHeight="0.0" prefWidth="260.0" text="Label">
+									<VBox.margin>
+										<Insets right="5.0" />
+									</VBox.margin>
+									<font>
+										<Font name="System Bold" size="24.0" />
+									</font>
+								</Label>
+							</children>
+						</VBox>
+					</children>
+				</HBox>
+            <Line endX="505.69287109375" endY="-4.449796676635742" startX="-100.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="93.0" prefWidth="609.0">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8_conference_60px.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="New Trianee">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+               <children>
+                  <VBox prefHeight="88.0" prefWidth="159.0">
+                     <children>
+                        <Label text="This Day">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="dayResultLabel" text="Label">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="12.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="88.0" prefWidth="189.0">
+                     <children>
+                        <Label text="This Months">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="monthsResulLabel" text="Label">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="88.0" prefWidth="128.0">
+                     <children>
+                        <Label text="This Year">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="yearResulLabel" text="Label">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+			</children>
+		</VBox>
+	</children>
+</Pane>

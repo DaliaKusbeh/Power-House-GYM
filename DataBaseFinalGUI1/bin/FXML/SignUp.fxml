@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="763.0" styleClass="backGround" stylesheets="@../CSS/fullPackUpStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignUpController">
+	<children>
+		<TextField fx:id="firstNameTextField" layoutX="323.0" layoutY="209.0" prefHeight="40.0" prefWidth="266.0" promptText="First Name .. " style="-fx-background-radius: 20;" />
+		<Label layoutX="170.0" layoutY="216.0" text="First Name">
+			<font>
+				<Font name="System Bold" size="17.0" />
+			</font>
+		</Label>
+		<Label layoutX="172.0" layoutY="273.0" text="Last Name">
+			<font>
+				<Font name="System Bold" size="17.0" />
+			</font>
+		</Label>
+		<Label layoutX="170.0" layoutY="343.0" text="User Name">
+			<font>
+				<Font name="System Bold" size="17.0" />
+			</font>
+		</Label>
+		<Label layoutX="170.0" layoutY="414.0" text="Password">
+			<font>
+				<Font name="System Bold" size="17.0" />
+			</font>
+		</Label>
+		<Label layoutX="170.0" layoutY="464.0" prefHeight="26.0" prefWidth="76.0" text="Gender">
+			<font>
+				<Font name="System Bold" size="17.0" />
+			</font>
+		</Label>
+		<Label layoutX="170.0" layoutY="527.0" prefHeight="30.0" prefWidth="159.0" text="Phone Number">
+			<font>
+				<Font name="System Bold" size="17.0" />
+			</font>
+		</Label>
+		<RadioButton fx:id="maleRadioButton" layoutX="329.0" layoutY="477.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="59.0" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="genderTG" />
+         </toggleGroup></RadioButton>
+		<RadioButton fx:id="femaleRadioButton" layoutX="469.0" layoutY="477.0" mnemonicParsing="false" text="Female" toggleGroup="$genderTG" />
+		<TextField fx:id="lashNameTextField" layoutX="321.0" layoutY="266.0" prefHeight="40.0" prefWidth="266.0" promptText="Last Name" style="-fx-background-radius: 20;" />
+		<TextField fx:id="userNameTextField" layoutX="320.0" layoutY="336.0" prefHeight="40.0" prefWidth="266.0" promptText="User (Only Digits)" style="-fx-background-radius: 20;" />
+		<TextField fx:id="phoneNumberTextField" layoutX="323.0" layoutY="522.0" prefHeight="40.0" prefWidth="260.0" promptText="Phone Number" style="-fx-background-radius: 20;" />
+		<Label fx:id="WrongFNameLabel" layoutX="331.0" layoutY="248.0" prefHeight="17.0" prefWidth="257.0" text="Enter a valid name" textFill="RED" visible="false" />
+		<Label fx:id="WrongLNameLabel" layoutX="331.0" layoutY="306.0" prefHeight="17.0" prefWidth="257.0" text="Enter a valid name" textFill="RED" visible="false" />
+		<Label fx:id="WrongUserLabel" layoutX="331.0" layoutY="376.0" prefHeight="17.0" prefWidth="257.0" text="Enter a valid User (only Digits [0-9] )" textFill="RED" visible="false" />
+		<Label fx:id="WrongGenderLabel" layoutX="331.0" layoutY="499.0" prefHeight="17.0" prefWidth="257.0" text="You Must to choose a gender" textFill="RED" visible="false" />
+		<Label fx:id="WrongPhoneLabel" layoutX="327.0" layoutY="562.0" prefHeight="17.0" prefWidth="257.0" text="Enter a valid Phone Number" textFill="RED" visible="false" />
+		<Label fx:id="WrongPasswordLabel" layoutX="331.0" layoutY="447.0" prefHeight="17.0" prefWidth="257.0" text="You have to fill Password" textFill="RED" visible="false" />
+		<Label layoutX="242.0" layoutY="110.0" prefHeight="74.0" prefWidth="190.0" text="Sign Up">
+			<font>
+				<Font name="System Bold" size="28.0" />
+			</font>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8_account_50px_1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+		</Label>
+		<Line endX="-74.5" layoutX="494.0" layoutY="175.0" startX="-251.69998168945312" />
+		<Button fx:id="signUpButton" layoutX="320.0" layoutY="670.0" mnemonicParsing="false" onAction="#handleSignUp" prefHeight="39.0" prefWidth="137.0" style="-fx-background-radius: 20;" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="SignUp">
+			<font>
+				<Font name="System Bold" size="19.0" />
+			</font>
+		</Button>
+		<Button fx:id="backButton" contentDisplay="TOP" graphicTextGap="1.0" layoutX="639.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleSetBack" prefHeight="74.0" prefWidth="84.0" styleClass="button6" text="Back">
+			<graphic>
+				<ImageView fitHeight="34.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../icon/icons8_previous_52px_1.png" />
+					</image>
+				</ImageView>
+			</graphic>
+			<padding>
+				<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+			</padding>
+			<font>
+				<Font name="System Bold" size="14.0" />
+			</font>
+		</Button>
+      <Label fx:id="wrongUserNameExsistLabel" layoutX="479.0" layoutY="601.0" prefHeight="30.0" prefWidth="169.0" text="The User Name already exist" textFill="RED" visible="false" />
+      <PasswordField fx:id="passwordTextField" layoutX="321.0" layoutY="407.0" prefHeight="40.0" prefWidth="266.0" promptText="User Password" style="-fx-background-radius: 20;" />
+      <Label layoutX="170.0" layoutY="592.0" prefHeight="39.0" prefWidth="114.0" text="Email">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="emailTextField" layoutX="324.0" layoutY="591.0" prefHeight="40.0" prefWidth="260.0" promptText="Email" style="-fx-background-radius: 20;" />
+      <Label fx:id="WEmail" layoutX="345.0" layoutY="638.0" text="Emter Your Email" textFill="RED" visible="false" />
+				<Text layoutX="181.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creat New Account" textAlignment="CENTER" wrappingWidth="400.67437744140625">
+					<font>
+						<Font name="System Bold" size="29.0" />
+					</font>
+				</Text>
+      <Line endX="348.5999755859375" endY="7.62939453125E-6" layoutX="257.0" layoutY="98.0" startX="-100.0" />
+	</children>
+</Pane>

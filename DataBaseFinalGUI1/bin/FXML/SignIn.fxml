@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="641.0" prefWidth="866.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SingInController">
+	<children>
+		<BorderPane prefHeight="641.0" prefWidth="866.0">
+			<left>
+				<Pane prefHeight="642.0" prefWidth="418.0" styleClass="container1" stylesheets="@../CSS/fullPackUpStyle.css" BorderPane.alignment="CENTER">
+					<children>
+						<ImageView fitHeight="175.0" fitWidth="184.0" layoutX="134.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../icon/dumbbell.png" />
+							</image>
+						</ImageView>
+						<Text blendMode="ADD" fill="WHITE" layoutX="97.0" layoutY="359.0" strokeLineCap="BUTT" strokeLineJoin="BEVEL" strokeMiterLimit="20.0" strokeType="OUTSIDE" strokeWidth="10.0" text="Power House" textAlignment="CENTER" wrappingWidth="262.66717529296875">
+							<font>
+								<Font name="System Bold" size="35.0" />
+							</font>
+						</Text>
+						<Text fill="#fafafa" layoutX="185.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gym" wrappingWidth="72.83010864257812">
+							<font>
+								<Font name="System Bold" size="31.0" />
+							</font>
+						</Text>
+					</children>
+				</Pane>
+			</left>
+			<right>
+				<StackPane prefHeight="582.0" prefWidth="418.0" BorderPane.alignment="CENTER">
+					<children>
+						<Pane prefHeight="642.0" prefWidth="440.0" stylesheets="@../CSS/fullPackUpStyle.css">
+							<children>
+								<TextField fx:id="userText" layoutX="88.0" layoutY="189.0" prefHeight="45.0" prefWidth="257.0" promptText="User Name" />
+								<PasswordField fx:id="passWordText" layoutX="87.0" layoutY="256.0" prefHeight="46.0" prefWidth="259.0" promptText="Password " />
+								<Button fx:id="signInButton" layoutX="222.0" layoutY="345.0" mnemonicParsing="false" onAction="#sigin" prefHeight="43.0" prefWidth="124.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Sign in" />
+								<Line endX="172.39999389648438" endY="-3.0517578125E-5" layoutX="246.0" layoutY="454.0" startX="-245.99996948242188" startY="-3.0517578125E-5" stroke="#d4d4d4" />
+								<Button fx:id="signUpButton" layoutX="88.0" layoutY="479.0" mnemonicParsing="false" onAction="#handleSignUpView" prefHeight="42.0" prefWidth="267.0" style="-fx-background-radius: 20;" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Don't have Any Account,Sign up" />
+								<Label fx:id="forgetPasswordLabel" layoutX="92.0" layoutY="350.0" onMouseClicked="#handelForgetPassword" prefHeight="34.0" prefWidth="117.0" text="Forget Password ?" />
+								<Text layoutX="87.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign In" wrappingWidth="200.66681671142578">
+									<font>
+										<Font name="System Bold" size="35.0" />
+									</font>
+								</Text>
+								<Label fx:id="wrongTable" layoutX="91.0" layoutY="313.0" prefHeight="24.0" prefWidth="256.0" text="Wrong UserName or PassWord , Try Again..!" textFill="#fa0000" visible="false" />
+                        <Button fx:id="backButton" contentDisplay="TOP" layoutX="329.0" layoutY="8.0" mnemonicParsing="false" onAction="#setBackToMainView" prefHeight="32.0" prefWidth="68.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="back">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icon/icons8_previous_52px_1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+							</children>
+						</Pane>
+					</children>
+				</StackPane>
+			</right>
+		</BorderPane>
+	</children>
+</AnchorPane>

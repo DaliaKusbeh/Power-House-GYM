@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="626.0" styleClass="backGround" stylesheets="@../CSS/fullPackUpStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddScheduleController">
+	<children>
+		<Label layoutX="170.0" layoutY="27.0" prefHeight="45.0" prefWidth="317.0" text="Add New Schedule ">
+			<font>
+				<Font size="21.0" />
+			</font>
+		</Label>
+		<Line endX="162.80001831054688" endY="7.62939453125E-6" layoutX="274.0" layoutY="71.0" startX="-100.0" />
+		<Button fx:id="backButton" contentDisplay="TOP" layoutX="534.0" layoutY="22.0" mnemonicParsing="false" onAction="#handelBack" prefHeight="45.0" prefWidth="68.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Back">
+			<graphic>
+				<ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../icon/icons8_back_to_50px.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+		<VBox layoutX="132.0" layoutY="93.0" prefHeight="308.0" prefWidth="463.0">
+			<children>
+				<HBox prefHeight="40.0" prefWidth="406.0" spacing="20.0">
+					<children>
+						<Label prefHeight="20.0" prefWidth="119.0" text="Name Of Caoch" />
+						<ComboBox fx:id="selectCoachComBox" prefHeight="26.0" prefWidth="210.0" promptText="Select The Available Coach" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+					</children>
+					<padding>
+						<Insets left="5.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="10.0" prefWidth="463.0">
+					<children>
+						<Label fx:id="WnameOfCoach" text="Select The Coach Please" textFill="#ff0000" visible="false" />
+					</children>
+				</HBox>
+				<HBox prefHeight="40.0" prefWidth="406.0" spacing="20.0">
+					<children>
+						<Label alignment="TOP_LEFT" prefHeight="18.0" prefWidth="121.0" text="Schedule Name" />
+						<TextField fx:id="SCNameTextField" prefHeight="26.0" prefWidth="209.0" promptText="Schedule Name" />
+					</children>
+					<padding>
+						<Insets left="5.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="8.0" prefWidth="463.0">
+					<children>
+						<Label fx:id="WSchaduleName" text="Please Enter The Schedule Name" textFill="#ff0000" visible="false" />
+					</children>
+				</HBox>
+				<HBox prefHeight="39.0" prefWidth="406.0" spacing="20.0">
+					<children>
+						<Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="21.0" prefWidth="118.0" text="Day">
+							<HBox.margin>
+								<Insets left="5.0" />
+							</HBox.margin>
+						</Label>
+						<ComboBox fx:id="dayComBox" prefHeight="26.0" prefWidth="206.0" promptText="Select The Day" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+					</children>
+					<padding>
+						<Insets bottom="20.0" left="5.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="39.0" prefWidth="406.0" spacing="20.0">
+					<children>
+						<Label alignment="TOP_LEFT" prefHeight="18.0" prefWidth="122.0" text="Start Time">
+							<padding>
+								<Insets left="5.0" />
+							</padding>
+						</Label>
+						<ComboBox fx:id="selTimeComBox1" prefHeight="26.0" prefWidth="160.0" promptText="Select The Start Time" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+						<ComboBox fx:id="timeComBox1" prefHeight="26.0" prefWidth="92.0" promptText="AM/PM" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+					</children>
+					<padding>
+						<Insets left="5.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="12.0" prefWidth="463.0">
+					<children>
+						<Label fx:id="WStartTime" text="Select The Time Please" textFill="#ff0000" visible="false" />
+					</children>
+				</HBox>
+				<HBox prefHeight="39.0" prefWidth="406.0" spacing="20.0">
+					<children>
+						<Label prefHeight="18.0" prefWidth="121.0" text="End Time" />
+						<ComboBox fx:id="selTimeComBox2" prefHeight="26.0" prefWidth="159.0" promptText="Select The End Time" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+						<ComboBox fx:id="timeComBox2" prefHeight="26.0" prefWidth="89.0" promptText="AM/PM" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" />
+					</children>
+					<padding>
+						<Insets left="5.0" />
+					</padding>
+				</HBox>
+				<HBox prefHeight="9.0" prefWidth="463.0">
+					<children>
+						<Label fx:id="WendTime" text="Select The Time Please" textFill="#ff0000" visible="false" />
+					</children>
+				</HBox>
+            <Label prefHeight="20.0" prefWidth="148.0" text="Activity in the Schedualee :" />
+            <TextArea fx:id="activityTextArea" prefHeight="72.0" prefWidth="463.0" promptText="Tell Us About The Activity Of This Class" />
+            <HBox prefHeight="12.0" prefWidth="463.0">
+               <children>
+                  <Label fx:id="Wactivity" text="Fill the Activity Please" textFill="#ff0000" visible="false" />
+               </children>
+            </HBox>
+			</children>
+		</VBox>
+		<Button fx:id="addButton" layoutX="379.0" layoutY="401.0" mnemonicParsing="false" onAction="#handelAdd" prefHeight="32.0" prefWidth="138.0" styleClass="button6" stylesheets="@../CSS/fullPackUpStyle.css" text="Add New Schedule " />
+	</children>
+</Pane>
